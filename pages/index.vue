@@ -2,7 +2,7 @@
 	<div class="flex items-center justify-center h-screen">
 		<nav class="font-mono">
 			<ContentNavigation v-slot="{ navigation }">
-				<ol class="list-[decimal-leading-zero] marker:text-neutral-500/80 p-0 space-y-9">
+				<ol class="list-[decimal-leading-zero] marker:text-neutral-600 p-0 space-y-9">
 					<li v-for="chapter in navigation" :key="chapter._path" class="pl-0">
 						<NuxtLink
 							:to="chapter._path"
