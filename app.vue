@@ -1,5 +1,7 @@
 <template>
 	<div class="h-screen w-screen">
+		<Lichtenberg />
+
 		<main class="min-h-full">
 			<NuxtPage />
 		</main>
