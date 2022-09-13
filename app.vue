@@ -8,6 +8,6 @@
 
 <script setup lang="ts">
 useHead({
-	titleTemplate: (title) => (title ? `${title} • Obscura` : "Obscura"),
+	titleTemplate: (title) => (title ? `${title} • Vox Obscura` : "Vox Obscura"),
 });
 </script>
