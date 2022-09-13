@@ -1,0 +1,10 @@
+{
+	"markdownlint.ignore": [
+		"content/**/*.md"
+	],
+	"[markdown]": {
+		"editor.rulers": [
+			80
+		]
+	}
+}
