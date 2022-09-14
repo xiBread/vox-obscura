@@ -1,4 +1,8 @@
 <template>
+	<Head>
+		<Link type="image/png" rel="icon" href="/logo.png" />
+	</Head>
+
 	<div class="h-screen w-screen">
 		<Lichtenberg />
 
