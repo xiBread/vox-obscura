@@ -1,0 +1,17 @@
+{
+	"Definition": {
+		"scope": "markdown",
+		"prefix": "def",
+		"body": [
+			"::definition",
+			"$1",
+			"",
+			"#definition",
+			"$2",
+			"",
+			"#details",
+			"$3",
+			"::"
+		]
+	}
+}
