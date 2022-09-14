@@ -1,5 +1,5 @@
 <template>
-	<div class="flex items-center justify-center h-screen">
+	<div class="flex items-center justify-center h-full">
 		<nav class="font-mono">
 			<ContentNavigation v-slot="{ navigation }">
 				<ol class="list-[decimal-leading-zero] marker:text-neutral-600 p-0 space-y-9">

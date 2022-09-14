@@ -2,9 +2,13 @@
 	<div class="h-screen w-screen">
 		<Lichtenberg />
 
-		<main class="min-h-full">
-			<NuxtPage />
-		</main>
+		<div class="flex flex-col h-full">
+			<main class="flex-[1]">
+				<NuxtPage />
+			</main>
+
+			<AppFooter />
+		</div>
 	</div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-	<div class="flex h-screen items-center justify-center">
+	<div class="flex h-full items-center justify-center">
 		<ContentDoc class="prose prose-neutral !prose-invert" />
 	</div>
 </template>
