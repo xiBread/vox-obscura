@@ -12,7 +12,7 @@
 					v-for="word in data"
 					:key="word._path"
 					:to="word._path"
-					class="first-letter:lowercase mr-10 my-4 text-neutral-400 hover:text-white"
+					class="mr-10 my-4 text-neutral-400 hover:text-white"
 				>
 					{{ word.title }}
 				</NuxtLink>
