@@ -13,5 +13,10 @@
 			"$0",
 			"::"
 		]
+	},
+	"Pronounciation": {
+		"scope": "markdown",
+		"prefix": "pro",
+		"body": "Pronounced \"$0.\""
 	}
 }
