@@ -1,7 +1,7 @@
 <template>
 	<dl>
 		<dt>
-			<h1>
+			<h1 class="first-letter:lowercase">
 				<ContentSlot :use="$slots.default" unwrap="p" />
 			</h1>
 		</dt>
