@@ -20,4 +20,16 @@
 useHead({
 	titleTemplate: (title) => (title ? `${title} • Vox Obscura` : "Vox Obscura"),
 });
+
+const router = useRouter();
+
+onMounted(() => {
+	useEventListener(document, "keydown", (event) => {
+		if (event.key === "Escape") {
+			router.push("/");
+		} else if (event.code === "Slash" && event.shiftKey) {
+			router.push("/all");
+		}
+	});
+});
 </script>
