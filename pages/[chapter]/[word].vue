@@ -13,7 +13,7 @@ const $regex = new RegExp(`/${route.params.chapter}/`);
 const { data } = await useAsyncData(() => queryContent().where({ _path: { $regex } }).find());
 const words = data.value;
 
-const current = words.findIndex((page) => page.title === route.params.word);
+const current = words.findIndex((page) => page._path === route.path);
 const prev = words[current - 1];
 const next = words[current + 1];
 
