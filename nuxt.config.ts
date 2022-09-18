@@ -7,4 +7,9 @@ export default defineNuxtConfig({
 	typescript: {
 		shim: false,
 	},
+	content: {
+		navigation: {
+			fields: ["description"],
+		},
+	},
 });
