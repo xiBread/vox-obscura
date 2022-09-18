@@ -5,9 +5,8 @@ export default defineNitroPlugin((app: NitroApp) => {
 	app.hooks.hook("content:file:afterParse", (file: ParsedContent) => {
 		const filename = file._id.split(":").at(-1)!.split(".")[1];
 
-		if (filename === "index" || /[a-z]/.test(file.title?.[0])) return;
+		if (filename === "index" || /^[a-z]/.test(file.title?.[0])) return;
 
-		file.title = filename.replace(/_/g, " ");
-		file.title = filename[0].toLowerCase() + file.title?.slice(1);
+		file.title = filename[0].toLowerCase() + file.title?.slice(1).replace(/_/g, " ");
 	});
 });
