@@ -5,7 +5,7 @@
 		</div>
 
 		<div
-			class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-20 mx-auto font-mono my-20 text-neutral-400"
+			class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-y-10 gap-x-20 mx-auto font-mono my-20 text-neutral-400"
 		>
 			<ContentQuery :path="$route.params.chapter.toString()" :skip="1" v-slot="{ data }">
 				<NuxtLink
