@@ -5,24 +5,15 @@
 </template>
 
 <script setup lang="ts">
-const route = useRoute();
 const router = useRouter();
-
-const $regex = new RegExp(`/${route.params.chapter}/`);
-
-const { data } = await useAsyncData(() => queryContent().where({ _path: { $regex } }).find());
-const words = data.value;
-
-const current = words.findIndex((page) => page._path === route.path);
-const prev = words[current - 1];
-const next = words[current + 1];
+const { prev, next } = useContent();
 
 onMounted(() => {
 	useEventListener(document, "keydown", (event) => {
 		if (event.key === "ArrowLeft" && prev) {
-			router.push(prev._path);
+			router.push(prev.value._path);
 		} else if (event.key === "ArrowRight" && next) {
-			router.push(next._path);
+			router.push(next.value._path);
 		}
 	});
 });

@@ -8,6 +8,7 @@ export default defineNuxtConfig({
 		shim: false,
 	},
 	content: {
+		documentDriven: true,
 		navigation: {
 			fields: ["description"],
 		},
