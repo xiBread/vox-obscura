@@ -1,20 +1,44 @@
 <template>
-	<div class="font-mono text-neutral-400 my-32 flex items-center justify-center">
-		<ol class="[column-count:3] space-y-2 gap-x-32">
-			<li v-for="word in words" :key="word._path">
-				<NuxtLink :to="word._path" class="hover:text-white">{{ word.title }}</NuxtLink>
-			</li>
-		</ol>
+	<div class="font-mono text-neutral-400 mt-32 mb-16 flex items-center justify-center">
+		<div class="[column-count:3] [column-gap:8rem] space-y-10">
+			<div v-for="group in Object.keys(groups).sort()" :key="group">
+				<div class="relative pointer-events-none h-5">
+					<h2 class="text-4xl absolute -left-3 text-neutral-500/30 font-semibold">
+						{{ group }}
+					</h2>
+				</div>
+
+				<ol class="space-y-2">
+					<li v-for="word in sort(groups[group])" :key="word._path">
+						<NuxtLink :to="word._path" class="hover:text-white">
+							{{ word.title }}
+						</NuxtLink>
+					</li>
+				</ol>
+			</div>
+		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
-useHead({ title: "Index" });
-const { navigation } = useContent();
+import type { Ref } from "vue";
+import type { ParsedContent } from "@nuxt/content/dist/runtime/types";
 
-const words = navigation.value
-	.map((ch) => ch.children)
-	.flat()
-	.filter((w) => !w.description)
-	.sort((a, b) => a.title.localeCompare(b.title));
+useHead({ title: "Index" });
+const { navigation }: { navigation: Ref<{ children: ParsedContent[] }[]> } = useContent();
+
+const sort = (xs: ParsedContent[]) => xs.sort((a, b) => a.title.localeCompare(b.title));
+
+const groups = navigation.value
+	.flatMap((nav) => nav.children)
+	.filter((word) => !word.description)
+	.map((word) => ({
+		...word,
+		title: word.title.replace(/^the (.+)/, "$1, the"),
+	}))
+	.reduce<Record<string, ParsedContent[]>>((group, word) => {
+		(group[word.title[0].toUpperCase()] ??= []).push(word);
+
+		return group;
+	}, {});
 </script>
