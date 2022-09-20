@@ -7,6 +7,6 @@ export default defineNitroPlugin((app: NitroApp) => {
 
 		if (filename === "index" || /^[a-z]/.test(file.title?.[0])) return;
 
-		file.title = filename[0].toLowerCase() + file.title?.slice(1).replace(/_/g, " ");
+		file.title = filename[0].toLowerCase() + filename?.slice(1).replace(/_/g, " ");
 	});
 });
