@@ -1,6 +1,6 @@
 <template>
 	<div class="font-mono text-neutral-400 mt-32 mb-16 flex items-center justify-center">
-		<div class="[column-count:3] [column-gap:10rem] space-y-12">
+		<div class="columns-3 gap-x-40 space-y-12">
 			<div v-for="group in Object.keys(groups).sort()" :key="group">
 				<ol class="space-y-2 relative inline-block">
 					<span
