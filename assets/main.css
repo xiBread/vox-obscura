@@ -14,11 +14,19 @@ html {
 body {
 	background: theme("colors.neutral.900");
 	color: white;
-	scrollbar-width: none;
+	overflow: overlay;
 }
 
 body::-webkit-scrollbar {
-	display: none;
+	width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+	background: theme("colors.neutral.700" / 50%);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+	background: theme("colors.neutral.700" / 90%);
 }
 
 /* * {
