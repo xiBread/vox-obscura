@@ -33,7 +33,7 @@ onMounted(() => {
 	if (width > 640) {
 		queue.push(
 			() => move(0, rand() * height, 0), // Left
-			() => move(width, rand() * height, Math.PI) // Right
+			() => move(width, rand() * height, Math.PI), // Right
 		);
 	}
 

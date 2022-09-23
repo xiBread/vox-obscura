@@ -1,6 +1,6 @@
 <template>
 	<div class="flex h-full items-center justify-center">
-		<ContentDoc class="prose prose-neutral !prose-invert" />
+		<ContentDoc class="prose !prose-invert prose-neutral" />
 	</div>
 </template>
 
@@ -8,10 +8,12 @@
 import type { ParsedContent } from "@nuxt/content/dist/runtime/types";
 import type { Ref } from "vue";
 
-const router = useRouter();
-const { prev, next } = useContent();
+type Content = Ref<ParsedContent>;
 
-const push = (page?: Ref<ParsedContent>) => !page?.value.index && router.push(page.value._path);
+const router = useRouter();
+const { prev, next } = useContent() as Record<string, Content>;
+
+const push = (page?: Content) => !page?.value.index && router.push(page?.value._path ?? "");
 
 onMounted(() => {
 	useEventListener(document, "keydown", (event) => {

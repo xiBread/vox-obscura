@@ -1,10 +1,10 @@
 <template>
-	<div class="font-mono text-neutral-400 mt-32 mb-16 flex items-center justify-center">
+	<div class="mt-32 mb-16 flex items-center justify-center font-mono text-neutral-400">
 		<div class="columns-3 gap-x-40 space-y-12">
 			<div v-for="group in Object.keys(groups).sort()" :key="group">
-				<ol class="space-y-2 relative inline-block">
+				<ol class="relative inline-block space-y-2">
 					<span
-						class="text-4xl absolute -top-3 -left-3 text-neutral-500/30 font-semibold"
+						class="absolute -top-3 -left-3 text-4xl font-semibold text-neutral-500/30"
 					>
 						{{ group }}
 					</span>
@@ -25,16 +25,16 @@ import type { Ref } from "vue";
 import type { ParsedContent } from "@nuxt/content/dist/runtime/types";
 
 useHead({ title: "Index" });
-const { navigation }: { navigation: Ref<{ children: ParsedContent[] }[]> } = useContent();
+const { navigation } = useContent() as { navigation: Ref<{ children: ParsedContent[] }[]> };
 
-const sort = (xs: ParsedContent[]) => xs.sort((a, b) => a.title.localeCompare(b.title));
+const sort = (xs: ParsedContent[]) => xs.sort((a, b) => a.title!.localeCompare(b.title!));
 
 const groups = navigation.value
 	.flatMap((nav) => nav.children)
 	.filter((word) => !word.description)
 	.map((word) => ({
 		...word,
-		title: word.title.replace(/^the (.+)/, "$1, the"),
+		title: word.title!.replace(/^the (.+)/, "$1, the"),
 	}))
 	.reduce<Record<string, ParsedContent[]>>((group, word) => {
 		(group[word.title[0].toUpperCase()] ??= []).push(word);

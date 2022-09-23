@@ -6,7 +6,7 @@
 	<div class="h-screen w-screen">
 		<Lichtenberg />
 
-		<div class="flex flex-col h-full">
+		<div class="flex h-full flex-col">
 			<main class="flex-[1]">
 				<NuxtPage />
 			</main>
@@ -26,9 +26,9 @@ const router = useRouter();
 onMounted(() => {
 	useEventListener(document, "keydown", (event) => {
 		if (event.key === "Escape") {
-			router.push("/");
+			void router.push("/");
 		} else if (event.code === "Slash" && event.shiftKey) {
-			router.push("/all");
+			void router.push("/all");
 		}
 	});
 });

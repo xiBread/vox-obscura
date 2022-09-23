@@ -10,7 +10,7 @@
 			<slot name="definition"></slot>
 		</dd>
 
-		<dd class="text-sm text-justify text-neutral-400">
+		<dd class="text-justify text-sm text-neutral-400">
 			<slot name="details"></slot>
 		</dd>
 	</dl>

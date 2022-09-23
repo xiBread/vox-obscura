@@ -1,18 +1,18 @@
 <template>
 	<div class="flex flex-col justify-center">
-		<div class="flex justify-center mt-32">
-			<ContentDoc tag="article" class="prose prose-neutral !prose-invert" />
+		<div class="mt-32 flex justify-center">
+			<ContentDoc tag="article" class="prose !prose-invert prose-neutral" />
 		</div>
 
 		<div
-			class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-y-10 gap-x-20 mx-auto font-mono my-20 text-neutral-400"
+			class="mx-auto my-20 grid grid-cols-1 gap-y-10 gap-x-20 font-mono text-neutral-400 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
 		>
-			<ContentQuery :path="$route.params.chapter.toString()" :skip="1" v-slot="{ data }">
+			<ContentQuery v-slot="{ data }" :path="$route.params.chapter.toString()" :skip="1">
 				<NuxtLink
 					v-for="word in data"
 					:key="word._path"
 					:to="word._path"
-					class="mr-10 my-4 hover:text-white"
+					class="my-4 mr-10 hover:text-white"
 				>
 					{{ word.title }}
 				</NuxtLink>

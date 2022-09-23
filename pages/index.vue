@@ -1,13 +1,13 @@
 <template>
-	<div class="flex items-center justify-center h-full">
+	<div class="flex h-full items-center justify-center">
 		<nav class="font-mono">
 			<ContentNavigation v-slot="{ navigation }">
-				<ol class="list-[decimal-leading-zero] marker:text-neutral-600 p-0 space-y-9">
+				<ol class="list-[decimal-leading-zero] space-y-9 p-0 marker:text-neutral-600">
 					<li v-for="chapter in navigation" :key="chapter._path" class="pl-0">
 						<NuxtLink
 							:to="chapter._path"
 							:title="chapter.title"
-							class="no-underline font-normal text-neutral-400 group hover:text-white"
+							class="group font-normal text-neutral-400 no-underline hover:text-white"
 						>
 							{{ chapter.title }}
 							<br />
