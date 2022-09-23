@@ -13,12 +13,8 @@ type Content = Ref<ParsedContent>;
 const router = useRouter();
 const { prev, next } = useContent() as Record<string, Content>;
 
-const push = (page?: Content) => !page?.value.index && router.push(page?.value._path ?? "");
+const push = (page?: Content) => !page?.value.index && router.push(page?.value._path ?? "/");
 
-onMounted(() => {
-	useEventListener(document, "keydown", (event) => {
-		event.key === "ArrowLeft" && push(prev);
-		event.key === "ArrowRight" && push(next);
-	});
-});
+onKeyStroke("ArrowLeft", () => void push(prev));
+onKeyStroke("ArrowRight", () => void push(next));
 </script>

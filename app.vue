@@ -23,13 +23,6 @@ useHead({
 
 const router = useRouter();
 
-onMounted(() => {
-	useEventListener(document, "keydown", (event) => {
-		if (event.key === "Escape") {
-			void router.push("/");
-		} else if (event.code === "Slash" && event.shiftKey) {
-			void router.push("/all");
-		}
-	});
-});
+onKeyStroke("Escape", () => void router.push("/"));
+onKeyStroke("?", () => void router.push("/all"));
 </script>
