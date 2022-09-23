@@ -1,10 +1,11 @@
 {
+	"markdown.experimental.validate.fileLinks.enabled": "ignore",
 	"markdownlint.ignore": [
 		"content/**/*.md"
 	],
 	"[markdown]": {
 		"editor.rulers": [
-			80
+			100
 		]
 	}
 }
