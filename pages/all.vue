@@ -1,14 +1,14 @@
 <template>
 	<div class="font-mono text-neutral-400 mt-32 mb-16 flex items-center justify-center">
-		<div class="[column-count:3] [column-gap:8rem] space-y-10">
+		<div class="[column-count:3] [column-gap:10rem] space-y-12">
 			<div v-for="group in Object.keys(groups).sort()" :key="group">
-				<div class="relative pointer-events-none h-5">
-					<h2 class="text-4xl absolute -left-3 text-neutral-500/30 font-semibold">
+				<ol class="space-y-2 relative inline-block">
+					<span
+						class="text-4xl absolute -top-3 -left-3 text-neutral-500/30 font-semibold"
+					>
 						{{ group }}
-					</h2>
-				</div>
+					</span>
 
-				<ol class="space-y-2">
 					<li v-for="word in sort(groups[group])" :key="word._path">
 						<NuxtLink :to="word._path" class="hover:text-white">
 							{{ word.title }}
