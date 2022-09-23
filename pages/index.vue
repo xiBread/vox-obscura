@@ -24,4 +24,10 @@
 
 <script setup lang="ts">
 useHead({ title: "" });
+
+definePageMeta({
+	documentDriven: {
+		page: false,
+	},
+});
 </script>

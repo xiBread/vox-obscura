@@ -25,6 +25,13 @@ import type { Ref } from "vue";
 import type { ParsedContent } from "@nuxt/content/dist/runtime/types";
 
 useHead({ title: "Index" });
+
+definePageMeta({
+	documentDriven: {
+		page: false,
+	},
+});
+
 const { navigation } = useContent() as { navigation: Ref<{ children: ParsedContent[] }[]> };
 
 const sort = (xs: ParsedContent[]) => xs.sort((a, b) => a.title!.localeCompare(b.title!));
