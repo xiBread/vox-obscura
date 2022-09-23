@@ -5,16 +5,18 @@
 </template>
 
 <script setup lang="ts">
+import type { ParsedContent } from "@nuxt/content/dist/runtime/types";
+import type { Ref } from "vue";
+
 const router = useRouter();
 const { prev, next } = useContent();
 
+const push = (page?: Ref<ParsedContent>) => !page?.value.index && router.push(page.value._path);
+
 onMounted(() => {
 	useEventListener(document, "keydown", (event) => {
-		if (event.key === "ArrowLeft" && prev) {
-			router.push(prev.value._path);
-		} else if (event.key === "ArrowRight" && next) {
-			router.push(next.value._path);
-		}
+		event.key === "ArrowLeft" && push(prev);
+		event.key === "ArrowRight" && push(next);
 	});
 });
 </script>
