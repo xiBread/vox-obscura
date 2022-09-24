@@ -1,12 +1,17 @@
 # TODO
 
+- Functionality
+  - Star/favorite feature
+  - Sharing (?)
+  - Click to copy word (?)
+
 - UI
-  - Footer
   - Back button
-  - Left & right navigation arrows on word pages
+  - Current chapter indicator
+  - Chapter navigation
 
 - Pages
-  - Index
+  - About
 
 - Extended entries
   - Chapter 1
