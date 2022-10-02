@@ -12,9 +12,6 @@
 		"format": "prettier -w .",
 		"style": "npm run lint && npm run format"
 	},
-	"dependencies": {
-		"vue-instantsearch": "^4.5.0"
-	},
 	"devDependencies": {
 		"@nuxt/content": "^2.1.1",
 		"@nuxtjs/tailwindcss": "^5.3.3",
