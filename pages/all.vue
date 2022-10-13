@@ -4,7 +4,7 @@
 			<div v-for="group in Object.keys(groups).sort()" :key="group">
 				<ol class="relative inline-block space-y-2">
 					<span
-						class="absolute -top-3 -left-3 text-4xl font-semibold text-neutral-500/30"
+						class="absolute -top-4 -left-4 text-5xl font-semibold text-neutral-500/30"
 					>
 						{{ group }}
 					</span>
