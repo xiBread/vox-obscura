@@ -1,9 +1,10 @@
 # TODO
 
 - Functionality
-  - Star/favorite feature
+  - Star/favorite
   - Sharing (?)
   - Click to copy word (?)
+  - Search
 
 - UI
   - Back button
