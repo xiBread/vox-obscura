@@ -8,7 +8,6 @@
 
 - UI
   - Back button
-  - Current chapter indicator
   - Chapter navigation
 
 - Pages
