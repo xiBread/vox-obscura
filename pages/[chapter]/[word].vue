@@ -27,8 +27,8 @@ const chapterName = name
 	.map((word) => word[0].toUpperCase() + word.slice(1))
 	.join(" ");
 
-const push = (page?: Content) => !page?.value.index && router.push(page?.value._path ?? "/");
+const push = (page?: Content) => void (!page?.value.index && router.push(page?.value._path ?? "/"));
 
-onKeyStroke("ArrowLeft", () => void push(prev));
-onKeyStroke("ArrowRight", () => void push(next));
+onKeyStroke("ArrowLeft", () => push(prev));
+onKeyStroke("ArrowRight", () => push(next));
 </script>
