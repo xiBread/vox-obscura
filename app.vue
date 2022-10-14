@@ -12,10 +12,17 @@
 			</main>
 
 			<footer class="p-8 font-mono text-sm">
-				<nav class="flex items-center justify-center text-neutral-500">
-					<NuxtLink to="/" class="hover:text-white">home</NuxtLink>
-					&nbsp;&bullet;&nbsp;
-					<NuxtLink to="/all" class="hover:text-white">index</NuxtLink>
+				<nav
+					class="flex items-center justify-center text-neutral-500 [&>a:not(:first-child)]:before:content-['\a0•\a0']"
+				>
+					<NuxtLink
+						v-for="[to, text] in links"
+						:key="text"
+						:to="to"
+						class="hover:text-white"
+					>
+						{{ text }}
+					</NuxtLink>
 				</nav>
 			</footer>
 		</div>
@@ -28,6 +35,11 @@ useHead({
 });
 
 const router = useRouter();
+
+const links = [
+	["/", "home"],
+	["/all", "index"],
+];
 
 onKeyStroke("Escape", () => void router.push("/"));
 onKeyStroke("?", () => void router.push("/all"));
