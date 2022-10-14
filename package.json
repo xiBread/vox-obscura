@@ -12,6 +12,14 @@
 		"format": "prettier -w .",
 		"style": "npm run lint && npm run format"
 	},
+	"prettier": {
+		"endOfLine": "lf",
+		"htmlWhitespaceSensitivity": "ignore",
+		"printWidth": 100,
+		"tabWidth": 4,
+		"trailingComma": "all",
+		"useTabs": true
+	},
 	"devDependencies": {
 		"@nuxt/content": "^2.1.1",
 		"@nuxtjs/tailwindcss": "^5.3.5",
