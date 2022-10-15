@@ -19,7 +19,7 @@
 						v-for="[to, text] in links"
 						:key="text"
 						:to="to"
-						class="hover:text-white"
+						class="hover:text-white hover:before:text-neutral-500"
 					>
 						{{ text }}
 					</NuxtLink>
