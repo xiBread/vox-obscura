@@ -8,7 +8,6 @@
 
 - UI
   - Back button
-  - Chapter navigation
 
 - Pages
   - About
