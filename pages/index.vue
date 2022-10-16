@@ -12,7 +12,7 @@
 							{{ chapter.title }}
 							<br />
 							<span class="text-sm text-neutral-500 group-hover:text-neutral-300">
-								{{ chapter.description }}
+								<em>{{ chapter.description }}</em>
 							</span>
 						</NuxtLink>
 					</li>
