@@ -3,7 +3,7 @@
 		<dl class="absolute top-0 p-8 font-mono text-sm">
 			<dd>
 				<NuxtLink :to="`/${name}`" class="text-neutral-500 hover:text-white">
-					<em>{{ chapterName }}</em>
+					<em>{{ current.title }}</em>
 				</NuxtLink>
 			</dd>
 		</dl>
@@ -13,22 +13,24 @@
 </template>
 
 <script setup lang="ts">
-import type { ParsedContent } from "@nuxt/content/dist/runtime/types";
+import type { NavItem, ParsedContent } from "@nuxt/content/dist/runtime/types";
 import type { Ref } from "vue";
 
-type Content = Ref<ParsedContent>;
+interface Content {
+	navigation: Ref<NavItem[]>;
+	next: Ref<ParsedContent>;
+	prev: Ref<ParsedContent>;
+	page: Ref<ParsedContent>;
+}
 
 const router = useRouter();
-const { prev, next, page } = useContent() as Record<string, Content>;
+const { prev, next, page, navigation } = useContent() as Content;
 
 const [, name] = /\d\.([\w-]+)/.exec(page.value._id)!;
-const chapterName = name
-	.split("-")
-	.map((word) => word[0].toUpperCase() + word.slice(1))
-	.join(" ");
+const current = navigation.value.find((item) => item._path.includes(name))!;
 
-const push = (page?: Content) => void (!page?.value.index && router.push(page?.value._path ?? "/"));
+const push = (page?: ParsedContent) => void (!page?.index && router.push(page?._path ?? "/"));
 
-onKeyStroke("ArrowLeft", () => push(prev));
-onKeyStroke("ArrowRight", () => push(next));
+onKeyStroke("ArrowLeft", () => push(prev.value));
+onKeyStroke("ArrowRight", () => push(next.value));
 </script>
