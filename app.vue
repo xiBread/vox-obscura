@@ -11,7 +11,7 @@
 				<NuxtPage />
 			</main>
 
-			<footer class="p-8 font-mono text-sm">
+			<footer class="z-10 p-8 font-mono text-sm">
 				<nav
 					class="flex items-center justify-center text-neutral-500 [&>a:not(:first-child)]:before:content-['\a0•\a0']"
 				>
@@ -19,7 +19,7 @@
 						v-for="[to, text] in links"
 						:key="text"
 						:to="to"
-						class="hover:text-white hover:before:text-neutral-500"
+						class="hover:text-neutral-200 hover:before:text-neutral-500"
 					>
 						{{ text }}
 					</NuxtLink>
