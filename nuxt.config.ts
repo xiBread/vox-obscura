@@ -8,6 +8,9 @@ export default defineNuxtConfig({
 		shim: false,
 		strict: true,
 	},
+	tailwindcss: {
+		viewer: false,
+	},
 	content: {
 		documentDriven: true,
 		navigation: {
