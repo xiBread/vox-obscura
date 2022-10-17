@@ -13,7 +13,7 @@
 								{{ `${i + 1}`.padStart(2, "0") }}
 
 								<span
-									class="absolute left-6 w-64 whitespace-nowrap text-left opacity-0 transition-[left,opacity] duration-500 group-hover:left-12 group-hover:opacity-100"
+									class="absolute left-0 w-64 whitespace-nowrap pl-6 text-left opacity-0 transition-[padding,opacity] duration-500 group-hover:pl-12 group-hover:opacity-100"
 								>
 									{{ chapter.title }}
 								</span>
