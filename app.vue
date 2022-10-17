@@ -34,6 +34,7 @@ const router = useRouter();
 const links = [
 	["/", "home"],
 	["/all", "index"],
+	["https://github.com/xiBread/vox-obscura", "source"],
 ];
 
 onKeyStroke("Escape", () => void router.push("/"));
