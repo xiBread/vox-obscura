@@ -13,16 +13,11 @@
 
 			<footer class="z-10 p-8 font-mono text-sm">
 				<nav
-					class="flex items-center justify-center text-neutral-500 [&>a:not(:first-child)]:before:content-['\a0•\a0']"
+					class="flex items-center justify-center text-neutral-500 [&>span:not(:first-child)]:before:content-['\a0•\a0']"
 				>
-					<NuxtLink
-						v-for="[to, text] in links"
-						:key="text"
-						:to="to"
-						class="hover:text-neutral-200 hover:before:text-neutral-500"
-					>
-						{{ text }}
-					</NuxtLink>
+					<span v-for="[to, text] in links" :key="text">
+						<NuxtLink :to="to" class="hover:text-neutral-200">{{ text }}</NuxtLink>
+					</span>
 				</nav>
 			</footer>
 		</div>
