@@ -1,5 +1,5 @@
 {
-	"markdown.experimental.validate.fileLinks.enabled": "ignore",
+	"markdown.validate.fileLinks.enabled": "ignore",
 	"markdownlint.ignore": [
 		"content/**/*.md"
 	],
