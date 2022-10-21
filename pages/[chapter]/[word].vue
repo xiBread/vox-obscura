@@ -1,6 +1,16 @@
 <template>
 	<div class="absolute flex h-full w-full items-center justify-center">
-		<div class="absolute left-0 flex px-8">
+		<dl class="absolute top-0 p-8 font-mono text-sm">
+			<dd>
+				<NuxtLink :to="`/${name}`" class="text-neutral-500 hover:text-neutral-200">
+					{{ current.title }}
+				</NuxtLink>
+			</dd>
+		</dl>
+
+		<ContentDoc class="prose !prose-invert prose-neutral" />
+
+		<div class="absolute left-0 hidden px-8 lg:flex">
 			<nav class="m-0 my-auto">
 				<ol class="group m-0 list-none p-0 text-sm text-neutral-600">
 					<li
@@ -23,16 +33,6 @@
 				</ol>
 			</nav>
 		</div>
-
-		<dl class="absolute top-0 p-8 font-mono text-sm">
-			<dd>
-				<NuxtLink :to="`/${name}`" class="text-neutral-500 hover:text-neutral-200">
-					<em>{{ current.title }}</em>
-				</NuxtLink>
-			</dd>
-		</dl>
-
-		<ContentDoc class="prose !prose-invert prose-neutral" />
 	</div>
 </template>
 
