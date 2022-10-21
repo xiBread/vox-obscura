@@ -37,15 +37,7 @@
 </template>
 
 <script setup lang="ts">
-import type { NavItem, ParsedContent } from "@nuxt/content/dist/runtime/types";
-import type { Ref } from "vue";
-
-interface Content {
-	navigation: Ref<NavItem[]>;
-	next: Ref<ParsedContent>;
-	prev: Ref<ParsedContent>;
-	page: Ref<ParsedContent>;
-}
+import type { ParsedContent } from "@nuxt/content/dist/runtime/types";
 
 const router = useRouter();
 const { prev, next, page, navigation } = useContent() as Content;

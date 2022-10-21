@@ -21,8 +21,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Ref } from "vue";
-import type { ParsedContent } from "@nuxt/content/dist/runtime/types";
+import type { NavItem } from "@nuxt/content/dist/runtime/types";
 
 useHead({ title: "Index" });
 
@@ -32,18 +31,18 @@ definePageMeta({
 	},
 });
 
-const { navigation } = useContent() as { navigation: Ref<{ children: ParsedContent[] }[]> };
+const { navigation } = useContent() as Content;
 
-const sort = (xs: ParsedContent[]) => xs.sort((a, b) => a.title!.localeCompare(b.title!));
+const sort = (xs: NavItem[]) => xs.sort((a, b) => a.title.localeCompare(b.title));
 
 const groups = navigation.value
-	.flatMap((nav) => nav.children)
+	.flatMap((nav) => nav.children!)
 	.filter((word) => !word.description)
 	.map((word) => ({
 		...word,
-		title: word.title!.replace(/^the (.+)/, "$1, the"),
+		title: word.title.replace(/^the (.+)/, "$1, the"),
 	}))
-	.reduce<Record<string, ParsedContent[]>>((group, word) => {
+	.reduce<Record<string, NavItem[]>>((group, word) => {
 		(group[word.title[0].toUpperCase()] ??= []).push(word);
 
 		return group;
