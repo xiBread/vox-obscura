@@ -1,13 +1,11 @@
 <template>
-	<dl>
+	<dl class="px-10">
 		<dt>
-			<h1>
-				<ContentSlot :use="$slots.default" unwrap="p" />
-			</h1>
+			<h1>{{ page.title }}</h1>
 		</dt>
 
 		<dd class="text-justify">
-			<slot name="definition"></slot>
+			<slot></slot>
 		</dd>
 
 		<dd class="text-justify text-sm text-neutral-400">
@@ -15,3 +13,7 @@
 		</dd>
 	</dl>
 </template>
+
+<script setup lang="ts">
+const { page } = useContent() as Content;
+</script>

@@ -4,9 +4,6 @@
 		"prefix": "def",
 		"body": [
 			"::definition",
-			"{{ \\$doc.title }}",
-			"",
-			"#definition",
 			"*${1|n,adj,v,v. intr|}.* $2",
 			"",
 			"#details",
