@@ -1,8 +1,6 @@
 import type { ParsedContent } from "@nuxt/content/dist/runtime/types";
-import type { NitroApp } from "nitropack";
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-call
-export default defineNitroPlugin((app: NitroApp) => {
+export default defineNitroPlugin((app) => {
 	app.hooks.hook("content:file:afterParse", (file: ParsedContent) => {
 		const filename = file._id.split(":").at(-1)!.split(".")[1];
 
