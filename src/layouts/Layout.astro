@@ -1,0 +1,51 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://rsms.me/" />
+		<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+		<meta name="generator" content={Astro.generator} />
+
+		<title>{title}</title>
+	</head>
+
+	<body class="bg-[#0a0a0a] text-white">
+		<div class="h-screen w-screen">
+			<!-- <Lichtenberg />  -->
+
+			<div class="flex h-full flex-col">
+				<main class="flex-[1]">
+					<slot />
+				</main>
+
+				<footer class="z-10 p-8 text-sm font-mono">
+					<nav
+						class="flex items-center justify-center text-neutral-500 [&>a]:hover:text-neutral-200"
+					>
+						<a href="/">home</a>
+						{"   "} &bullet; {"   "}
+						<a href="/all">index</a>
+					</nav>
+				</footer>
+			</div>
+		</div>
+	</body>
+</html>
+
+<style is:global>
+	html {
+		font-family: "Inter var", sans-serif;
+	}
+</style>

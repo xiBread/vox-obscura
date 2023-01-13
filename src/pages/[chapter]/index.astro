@@ -1,0 +1,42 @@
+---
+import type { GetStaticPathsResult } from "astro";
+import { NAVIGATION } from "../../config";
+import Layout from "../../layouts/Layout.astro";
+
+export function getStaticPaths(): GetStaticPathsResult {
+	return NAVIGATION.map((item) => ({ params: { chapter: item.slug } }));
+}
+
+const chapters = await Astro.glob("../../content/*.md");
+const chapter = chapters.find((ch) => ch.file.includes(Astro.params.chapter!))!;
+
+const quote = chapter.rawContent().replace(/#.+\n+/, "");
+const { author, source } = chapter.frontmatter;
+---
+
+<Layout title="">
+	<div class="flex flex-col justify-center">
+		<div class="mt-32 flex justify-center px-16">
+			<article class="prose !prose-invert prose-neutral">
+				<chapter.Content />
+
+				<figure class="prose-blockquote:font-normal prose-blockquote:not-italic">
+					<blockquote
+						class="not-prose text-neutral-300 [&>p]:text-justify whitespace-pre"
+					>
+						{quote}
+					</blockquote>
+
+					<figcaption>
+						&mdash; {author}, <cite>{source}</cite>
+					</figcaption>
+				</figure>
+			</article>
+		</div>
+
+		<div
+			class="mx-auto my-20 grid grid-cols-2 gap-y-8 gap-x-8 px-8 text-center font-mono text-sm text-neutral-400 sm:gap-x-24 md:grid-cols-3 md:gap-x-16 lg:gap-x-32 2xl:grid-cols-4"
+		>
+		</div>
+	</div>
+</Layout>

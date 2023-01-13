@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { NAVIGATION } from "../config";
+---
+
+<Layout title="Home">
+	<div class="flex h-full items-center justify-center px-24 sm:px-28">
+		<nav class="font-mono">
+			<ol class="list-[decimal-leading-zero] space-y-10 p-0 marker:text-neutral-600">
+				{
+					NAVIGATION.map((chapter) => (
+						<li class="pl-0">
+							<a
+								href={chapter.slug}
+								class="group font-normal flex flex-col text-neutral-400 no-underline hover:text-white"
+							>
+								<span class="mb-1.5">{chapter.title}</span>
+
+								<span class="text-sm text-neutral-500 group-hover:text-neutral-300">
+									<em>{chapter.description}</em>
+								</span>
+							</a>
+						</li>
+					))
+				}
+			</ol>
+		</nav>
+	</div>
+</Layout>
