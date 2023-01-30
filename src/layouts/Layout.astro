@@ -2,50 +2,77 @@
 export interface Props {
 	title: string;
 }
-
-const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
 		<link rel="preconnect" href="https://rsms.me/" />
 		<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
 
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap"
+		/>
+
 		<meta name="generator" content={Astro.generator} />
 
-		<title>{title}</title>
+		<title>{Astro.props.title} &bullet; Vox Obscura</title>
 	</head>
 
-	<body class="bg-[#0a0a0a] text-white">
-		<div class="h-screen w-screen">
-			<!-- <Lichtenberg />  -->
+	<body class="bg-[#0a0a0a] text-white [overflow:overlay]">
+		<main class="flex flex-col">
+			<slot />
+		</main>
 
-			<div class="flex h-full flex-col">
-				<main class="flex-[1]">
-					<slot />
-				</main>
-
-				<footer class="z-10 p-8 text-sm font-mono">
-					<nav
-						class="flex items-center justify-center text-neutral-500 [&>a]:hover:text-neutral-200"
-					>
-						<a href="/">home</a>
-						{"   "} &bullet; {"   "}
-						<a href="/all">index</a>
-					</nav>
-				</footer>
+		<footer class="mt-24 font-mono text-sm">
+			<div class="sm:px-8">
+				<div class="mx-auto max-w-7xl lg:px-8">
+					<div class="border-t border-neutral-800 py-14">
+						<nav class="flex items-center justify-center space-x-6 text-neutral-500">
+							{
+								[
+									["/", "home"],
+									["/all", "index"],
+									["/about", "about"],
+								].map(([to, text]) => (
+									<a href={to} class="hover:text-neutral-200">
+										{text}
+									</a>
+								))
+							}
+						</nav>
+					</div>
+				</div>
 			</div>
-		</div>
+		</footer>
 	</body>
 </html>
 
 <style is:global>
 	html {
 		font-family: "Inter var", sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		scroll-behavior: smooth;
+	}
+
+	body::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	body::-webkit-scrollbar-thumb {
+		background: theme("colors.neutral.700" / 50%);
+	}
+
+	body::-webkit-scrollbar-thumb:hover {
+		background: theme("colors.neutral.700" / 90%);
 	}
 </style>

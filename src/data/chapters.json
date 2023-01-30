@@ -1,0 +1,85 @@
+[
+	{
+		"id": 0,
+		"slug": "between-living-and-dreaming",
+		"name": "Between Living and Dreaming",
+		"description": "Seeing the world as it is, and the world as it could be",
+		"quotes": [
+			{
+				"body": "The bright side of the planet moves toward darkness\nAnd the cities are falling alseep, each in its hour,\nAnd for me, now as then, it is too much,\nThere is too much world.",
+				"author": "Czeslaw Milosz",
+				"source": "The Separate Notebooks"
+			}
+		]
+	},
+	{
+		"id": 1,
+		"slug": "the-interior-wilderness",
+		"name": "The Interior Wilderness",
+		"description": "Defining who you are from the inside out",
+		"quotes": [
+			{
+				"body": "This is what I believe:\n\t\"<em>That I am I.</em>\"\n\t\"<em>That my soul is a dark forest.</em>\"\n\t\"<em>That my known self will never be more than a little clearing\n\t\tin the forest.</em>\"\n\t\"<em>That gods, strange gods, come forth from the forest into the\n\t\tclearing of my known self, and then go back.</em>\"\n\t\"<em>That I must have the courage to let them come and go.</em>\"\n\t\"<em>That I will never let mankind put anything over me, but\n\t\tthat I will try always to recognize and submit to the gods in me and the gods in\n\t\tother men and women.</em>\"\nThere is my creed.",
+				"author": "D. H. Lawrence",
+				"source": "Studies in Classic American Literature"
+			}
+		]
+	},
+	{
+		"id": 2,
+		"slug": "montage-of-attractions",
+		"name": "Montage of Attractions",
+		"description": "Finding shelter in the presence of others",
+		"quotes": [
+			{
+				"body": "Life will break you. Nobody can protect you from that, and living alone won't either, for solitude will also break you with its yearning. You have to love. You have to feel, it is the reason you are here on earth. You are here to risk your heart. You are here to be swallowed up. And when it happens that you are broken, or betrayed, or left, or hurt, or death brushes near, let yourself sit by an apple tree and listen to the apples falling all around you in heaps, wasting their sweetness. Tell yourself that you tasted as many as you could.",
+				"author": "Louise Erdrich",
+				"source": "The Painted Drum"
+			}
+		]
+	},
+	{
+		"id": 3,
+		"slug": "faces-in-a-crowd",
+		"name": "Faces in a Crowd",
+		"description": "Catching glimpses of humanity from a distance",
+		"quotes": [
+			{
+				"body": "We all have our little solipsistic delusions, ghastly intuitions of utter singularity: that we are the only one in the house who ever fills the ice-cube tray, who unloads the clean dishwasher, who occasionally pees in the shower, whose eyelid twitches on first dates; that only we take casualness terribly seriously; that only we fashion supplication into courtesy; that only we hear the whiny pathos in a dog's yawn, the timeless sigh in the opening of the hermetically-sealed jar, the splattered laugh in that frying egg, the minor-D lament in the vacuum's scream; that only we feel the panic at sunset the rookie kindergartner feels at his mother's retreat. That only we love the only-we. That only we need the only-we. Solipsism binds us together.... That we feel lonely in a crowd; stop not to dwell on what's brought the crowd into being. That we are always, faces in a crowd.",
+				"author": "David Foster Wallace",
+				"source": "Girl with Curious Hair"
+			}
+		]
+	},
+	{
+		"id": 4,
+		"slug": "boats-against-the-current",
+		"name": "Boats Against the Current",
+		"description": "Holding on in the rush of the moment",
+		"quotes": [
+			{
+				"body": "The illimitable, silent, never-resting thing called Time, rolling, rushing on, swift, silent, like an all-embracing ocean-tide, on which we and all the Universe swim like exhalations, like apparitions which <em>are</em>, and then <em>are not</em>: this is forever very literally a miracle; a thing to strike us dumb&mdash;for we have no word to speak about it.",
+				"author": "Thomas Carlyle",
+				"source": "On Heroes"
+			}
+		]
+	},
+	{
+		"id": 5,
+		"slug": "roll-the-bones",
+		"name": "Roll the Bones",
+		"description": "Connecting the dots of a wide-open universe",
+		"quotes": [
+			{
+				"body": "We can never know what to want, because, living only one life, we can neither compare it with our previous lives nor perfect it in our lives to come. [...] We live everything as it comes, without warning, like an actor going on cold. And what can life be worth if the first rehearsal for life is life itself? That is why life is always like a sketch. No, \"sketch\" is not quite the word, because a sketch is an outline of something, the groundwork for a picture, whereas the sketch that is our life is a sketch for nothing, an outline with no picture.",
+				"author": "Milan Kundera",
+				"source": "The Unbearable Lightness of Being"
+			},
+			{
+				"body": "What, what am I to do with all of this life?",
+				"author": "Gwendolyn Brooks",
+				"source": "Maud Martha"
+			}
+		]
+	}
+]

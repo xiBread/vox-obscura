@@ -1,0 +1,41 @@
+{
+	"root": true,
+	"env": {
+		"browser": true,
+		"node": true,
+		"es2022": true
+	},
+	"extends": [
+		"prettier",
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:astro/recommended"
+	],
+	"plugins": [
+		"@typescript-eslint"
+	],
+	"parserOptions": {
+		"parser": "@typescript-eslint/parser"
+	},
+	"ignorePatterns": [
+		"dist",
+		"node_modules"
+	],
+	"rules": {
+		"@typescript-eslint/no-non-null-assertion": 0
+	},
+	"overrides": [
+		{
+			"files": [
+				"*.astro"
+			],
+			"parser": "astro-eslint-parser",
+			"parserOptions": {
+				"parser": "@typescript-eslint/parser",
+				"extraFileExtensions": [
+					".astro"
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,16 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Content as About } from "../data/about.md";
+---
+
+<Layout title="About">
+	<div class="px-6 sm:px-8">
+		<div class="mt-12 flex justify-center md:mt-20 lg:px-8">
+			<article
+				class="prose !prose-invert prose-neutral max-w-3xl text-justify [&_a]:decoration-neutral-400 [&_a]:underline-offset-2 hover:[&_a]:decoration-neutral-300"
+			>
+				<About />
+			</article>
+		</div>
+	</div>
+</Layout>

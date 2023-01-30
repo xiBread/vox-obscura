@@ -1,0 +1,50 @@
+---
+import words from "../data/words.json";
+import Layout from "../layouts/Layout.astro";
+import type { Word } from "../lib/dictionary";
+
+const groups = Object.values(words)
+	.flat()
+	.map((word) => ({
+		...word,
+		name: word.name.replace(/^the (.+)/, "$1, the"),
+	}))
+	.reduce<Record<string, Word[]>>((group, word) => {
+		(group[word.name[0].toUpperCase()] ??= []).push(word);
+
+		return group;
+	}, {});
+---
+
+<Layout title="Index">
+	<div class="mt-24 mb-16 flex items-center justify-center font-mono text-neutral-400">
+		<div class="columns-1 gap-x-40 space-y-12 md:columns-2 lg:columns-3">
+			{
+				Object.keys(groups)
+					.sort()
+					.map((group) => (
+						<div>
+							<ol class="relative inline-block space-y-2">
+								<span class="absolute -top-4 -left-4 text-5xl font-semibold text-neutral-500/30">
+									{group}
+								</span>
+
+								{groups[group]
+									.sort((a, b) => a.name.localeCompare(b.name))
+									.map((word) => (
+										<li>
+											<a
+												href={`${word.chapter}/${word.slug}`}
+												class="hover:text-white"
+											>
+												{word.name}
+											</a>
+										</li>
+									))}
+							</ol>
+						</div>
+					))
+			}
+		</div>
+	</div>
+</Layout>

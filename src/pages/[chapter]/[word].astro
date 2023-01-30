@@ -1,0 +1,55 @@
+---
+import type { GetStaticPathsResult } from "astro";
+import Layout from "../../layouts/Layout.astro";
+import dictionary from "../../lib/dictionary";
+
+export function getStaticPaths(): GetStaticPathsResult {
+	return Object.values(dictionary.chapters).reduce<GetStaticPathsResult>(
+		(all, ch) => [
+			...all,
+			...ch.words.map((word) => ({
+				params: {
+					chapter: word.chapter,
+					word: word.slug,
+				},
+			})),
+		],
+		[]
+	);
+}
+
+const { chapter, word } = Astro.params;
+const currentWord = dictionary.get(word!);
+
+const types: Record<number, string> = {
+	1: "n.",
+	2: "adj.",
+	3: "v.",
+	4: "v. intr.",
+};
+---
+
+<Layout title={currentWord.name}>
+	<div class="flex h-screen items-center justify-center">
+		<a
+			href={`/${chapter}`}
+			class="absolute top-0 m-8 font-mono text-sm text-neutral-500 hover:text-neutral-200"
+		>
+			{dictionary.chapters[chapter!].name}
+		</a>
+
+		<dl class="prose !prose-invert prose-neutral px-10">
+			<dt>
+				<h1>{currentWord.name}</h1>
+			</dt>
+
+			<dd class="text-justify">
+				<p><em>{types[currentWord.type]}</em> {currentWord.definition}</p>
+			</dd>
+
+			<dd class="text-justify text-sm text-neutral-400">
+				<p set:html={currentWord.etymology} />
+			</dd>
+		</dl>
+	</div>
+</Layout>
