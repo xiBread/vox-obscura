@@ -26,19 +26,17 @@ export interface Word extends Metadata {
 	etymology: string;
 }
 
-const chapters = Object.entries(wordData).reduce<Record<string | number, Chapter>>(
-	(all, [slug, entries], i) => ({
-		...all,
-		[slug]: {
-			...chapterData.find((ch) => ch.id === i)!,
-			words: entries,
-		},
-	}),
-	{}
-);
-
 export default {
-	chapters,
+	chapters: Object.entries(wordData).reduce<Record<string, Chapter>>(
+		(all, [slug, words], i) => ({
+			...all,
+			[slug]: {
+				...chapterData.find((ch) => ch.id === i)!,
+				words,
+			},
+		}),
+		{}
+	),
 	get: (slug: string): Word => {
 		return Object.values(wordData)
 			.flat()
