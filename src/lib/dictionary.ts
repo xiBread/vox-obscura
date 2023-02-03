@@ -37,6 +37,7 @@ export default {
 		}),
 		{}
 	),
+	words: Object.values(wordData).flat(),
 	get: (slug: string): Word => {
 		return Object.values(wordData)
 			.flat()

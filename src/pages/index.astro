@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import chapters from "../data/chapters.json";
+import dictionary from "../lib/dictionary";
 ---
 
 <Layout title="Home">
@@ -8,7 +8,7 @@ import chapters from "../data/chapters.json";
 		<nav class="font-mono">
 			<ol class="list-[decimal-leading-zero] space-y-10 p-0 marker:text-neutral-600">
 				{
-					chapters.map((chapter) => (
+					Object.values(dictionary.chapters).map((chapter) => (
 						<li class="pl-0">
 							<a
 								href={chapter.slug}

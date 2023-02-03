@@ -1,10 +1,8 @@
 ---
-import words from "../data/words.json";
 import Layout from "../layouts/Layout.astro";
-import type { Word } from "../lib/dictionary";
+import dictionary, { type Word } from "../lib/dictionary";
 
-const groups = Object.values(words)
-	.flat()
+const groups = dictionary.words
 	.map((word) => ({
 		...word,
 		name: word.name.replace(/^the (.+)/, "$1, the"),
