@@ -33,6 +33,9 @@ const groups = dictionary.words
 										<li>
 											<a
 												href={`${word.chapter}/${word.slug}`}
+												title={`${
+													dictionary.chapters[word.chapter].name
+												}: ${word.name}`}
 												class="hover:text-white"
 											>
 												{word.name}
