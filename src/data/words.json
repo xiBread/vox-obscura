@@ -431,7 +431,7 @@
 			"slug": "nementia",
 			"name": "nementia",
 			"type": 1,
-			"definition": "the post-distraction effor to recall the reason you're feeling particularly anxious or angry or excited, trying to retrace your sequence of thoughts like a kid gathering the string of a downed kite.",
+			"definition": "the post-distraction effort to recall the reason you're feeling particularly anxious or angry or excited, trying to retrace your sequence of thoughts like a kid gathering the string of a downed kite.",
 			"etymology": "Ancient Greek νέμειν (<em>némein</em>), to give what is due + Latin <em>dementia</em>, without mind. Pronounced \"ne-<em>men</em>-shuh.\""
 		},
 		{
@@ -611,7 +611,7 @@
 			"slug": "aesthosis",
 			"name": "aesthosis",
 			"type": 1,
-			"definition": "the state of feeling trapped inside your own subjective tastes—not knowing *why* you find certain things beautiful or ugly, only that you do—wishing you could remove the sociopsychological lenses from your eyes so you could see the beauty in anything and be moved to tears by the smell of burning garbage, the aria of a screaming toddler, or a neon Elvis painted on black velvet.",
+			"definition": "the state of feeling trapped inside your own subjective tastes—not knowing <em>why</em> you find certain things beautiful or ugly, only that you do—wishing you could remove the sociopsychological lenses from your eyes so you could see the beauty in anything and be moved to tears by the smell of burning garbage, the aria of a screaming toddler, or a neon Elvis painted on black velvet.",
 			"etymology": "From <em>aesthetic</em>, concerned with beauty or artistry + <em>orthosis</em>, a brace that artificially straightens a weak or injured part of the body. Pronounced \"es-<em>thoh</em>-sis.\""
 		},
 		{
@@ -638,7 +638,7 @@
 			"slug": "rubatosis",
 			"name": "rubatosis",
 			"type": 1,
-			"definition": "the unsettling awareness of your own heartbeat, whose tenuous muscular throbbing feels less like a metronome than nervous ditty your heart is tapping to itself, as if to casually remind the outside world, *I'm here, I'm here, I'm here*.",
+			"definition": "the unsettling awareness of your own heartbeat, whose tenuous muscular throbbing feels less like a metronome than nervous ditty your heart is tapping to itself, as if to casually remind the outside world, <em>I'm here, I'm here, I'm here</em>.",
 			"etymology": "In music, <em>tempo rubato</em>, \"stolen time,\" is a slight speeding up and slowing down of the tempo of a piece, borrowing time from one measure then paying it back later. Pronounced \"roo-bah-<em>toh</em>-sis.\""
 		},
 		{
@@ -648,7 +648,7 @@
 			"name": "leidenfreude",
 			"type": 1,
 			"definition": "a sense of paradoxical relief when something bad happens to you, which temporarily lowers your own expectations for yourself, transforming a faceless protagonist into something of an underdog, who's that much easier to root for.",
-			"etymology": "German <em>Leiden</em>, suffering + <em>Freude</em>, joy. Compare <em>Schadenfreude</em>, joy at the misfortune of others. Pronounced \"*lahyd-n-froi-duh.\""
+			"etymology": "German <em>Leiden</em>, suffering + <em>Freude</em>, joy. Compare <em>Schadenfreude</em>, joy at the misfortune of others. Pronounced \"<em>lahyd</em>-n-froi-duh.\""
 		},
 		{
 			"id": 72,
@@ -1046,7 +1046,7 @@
 			"name": "querinous",
 			"type": 2,
 			"definition": "longing for a sense of certainty in a relationship; wishing there were some way to know ahead of time whether this is the person you're going to wake up next to for twenty thousand mornings in a row, instead of having to count them out one by one, quietly hoping your streak continues.",
-			"etymology": "Mandarin 确认 (*quèrèn), confirmation. Twenty thousand days is roughly fifty-five years. Pronounced \"<em>kweh</em>-ruh-nuhs.\""
+			"etymology": "Mandarin 确认 (<em>quèrèn</em>), confirmation. Twenty thousand days is roughly fifty-five years. Pronounced \"<em>kweh</em>-ruh-nuhs.\""
 		},
 		{
 			"id": 116,
@@ -1153,7 +1153,7 @@
 			"slug": "rivener",
 			"name": "rivener",
 			"type": 1,
-			"definition": "a chilling hint of distance that creeps slowly into a relationship—beginning to notice them laugh a little less, look away a little more, explain away their like it's no longer your business—as if you're watching them fall out of love right in front of you, gradually and painfully, like a hole in the radiator that leaves your house a little colder with every passing day, whose only clue is a slow, unnerving *drip*—*drip*—*drip*.",
+			"definition": "a chilling hint of distance that creeps slowly into a relationship—beginning to notice them laugh a little less, look away a little more, explain away their like it's no longer your business—as if you're watching them fall out of love right in front of you, gradually and painfully, like a hole in the radiator that leaves your house a little colder with every passing day, whose only clue is a slow, unnerving <em>drip—drip—drip</em>.",
 			"etymology": "Middle English <em>riven</em>, to read, to cleave apart. Pronounced \"<em>riv</em>-uh-ner.\""
 		},
 		{
@@ -1252,7 +1252,7 @@
 			"slug": "soufrise",
 			"name": "soufrise",
 			"type": 1,
-			"definition": "the maddening thrill of an ambiguous flirtation, which quivers in tension halfway between platonic and romantic—*maybe, but no, but maybe*—leaving you guessing what's going on inside their chest, forced to assume that at any given moment their attraction is both alive and dead at the same time.",
+			"definition": "the maddening thrill of an ambiguous flirtation, which quivers in tension halfway between platonic and romantic—<em>maybe, but no, but maybe</em>—leaving you guessing what's going on inside their chest, forced to assume that at any given moment their attraction is both alive and dead at the same time.",
 			"etymology": "French <em>sourire</em>, smile + <em>frisson</em>, a shiver of chill or excitement. Pronounced \"soo-<em>freez</em>.\""
 		},
 		{
@@ -1795,7 +1795,7 @@
 			"name": "mal de coucou",
 			"type": 1,
 			"definition": "a condition in which you have an active social life but very few close friends—people who you can trust, who you can be yourself with, who can help flush out the weird psychological toxins that tend to accumulate over time—which can eventually progress into a state of acute social malnutrition, where even if you devour an entire buffet of chitchar, you'll still feel pangs of hunger.",
-			"etymology": "French <em>mal</em>, ache + <em>de coucou</em>, of the cuckoo bird. <em>Coucou</em> is also a French colloquialism for \"Hey there!\" <em>Mal de coucou</em> is a riff on the term <em>mal de caribou</em>, also known as rabbit starvation*, in which you can starve to death even with unlimited access to lean meats like rabbit and caribou, after eating an excess of protein and not enough fat. Pronounced \"mal duh koo-<em>koo</em>.\""
+			"etymology": "French <em>mal</em>, ache + <em>de coucou</em>, of the cuckoo bird. <em>Coucou</em> is also a French colloquialism for \"Hey there!\" <em>Mal de coucou</em> is a riff on the term <em>mal de caribou</em>, also known as <em>rabbit starvation</em>, in which you can starve to death even with unlimited access to lean meats like rabbit and caribou, after eating an excess of protein and not enough fat. Pronounced \"mal duh koo-<em>koo</em>.\""
 		},
 		{
 			"id": 199,
@@ -2021,7 +2021,7 @@
 			"slug": "anchorage",
 			"name": "anchorage",
 			"type": 1,
-			"definition": "the desire to hold on to time as it passes, like trying to keep your grip on a rock in the middle of a river, feeling the weight of the current against your chest while your elders float on downstream, calling over the roar of the rapids, \"*Just let go—it's okay—let go.*\"",
+			"definition": "the desire to hold on to time as it passes, like trying to keep your grip on a rock in the middle of a river, feeling the weight of the current against your chest while your elders float on downstream, calling over the roar of the rapids, \"<em>Just let go—it's okay—let go.</em>\"",
 			"etymology": "From <em>anchorage</em>, a port at which ships may anchor. Pronounced \"<em>ang</em>-ker-ij.\""
 		},
 		{
@@ -2102,7 +2102,7 @@
 			"slug": "echthesia",
 			"name": "echthesia",
 			"type": 1,
-			"definition": "a state of confusion when your own internal sense of time doesn't seem to match that of the calendar—knowing that something *just happened* though it apparently took place seven years ago, or that you somehow built up a decade of memories in the span of only a year and a half.",
+			"definition": "a state of confusion when your own internal sense of time doesn't seem to match that of the calendar—knowing that something <em>just happened</em> though it apparently took place seven years ago, or that you somehow built up a decade of memories in the span of only a year and a half.",
 			"etymology": "Greek <em>εχθές</em> (<em>echthés</em>), yesterday + <em>αἴσθησις</em> (<em>aísthēsis</em>), sensation. Pronounced  \"ek-<em>thee</em>-zhuh.\""
 		},
 		{
@@ -2572,7 +2572,7 @@
 			"slug": "moriturism",
 			"name": "moriturism",
 			"type": 1,
-			"definition": "a tiny jolt of awareness that someday you will die, which leaves you lying awake in bed whispering silently to yourself, *Oh, right, this is it*; an unsettling reminder that your life is not just a game you're playing or a story you'll be telling later, but your one and only glimpse of what the universe has to offer, like a kid waking up in the back seat of the family car at night, having pulled into a bright neon gas station, looking around for a moment or two, before settling back in for the long road trip, sleeping for miles and miles off into the dark.",
+			"definition": "a tiny jolt of awareness that someday you will die, which leaves you lying awake in bed whispering silently to yourself, <em>Oh, right, this is it</em>; an unsettling reminder that your life is not just a game you're playing or a story you'll be telling later, but your one and only glimpse of what the universe has to offer, like a kid waking up in the back seat of the family car at night, having pulled into a bright neon gas station, looking around for a moment or two, before settling back in for the long road trip, sleeping for miles and miles off into the dark.",
 			"etymology": "Latin <em>morituri</em>, \"we who are about to die.\" Pronounced \"moh-<em>rich</em>-uh-riz-uhm.\""
 		},
 		{
@@ -2635,7 +2635,7 @@
 			"slug": "ecsis",
 			"name": "ecsis",
 			"type": 1,
-			"definition": "the haunting sense of mystery infused into certain random details tht beckons you to wonder how it ended up here at this point in time—marveling at a patch of white on a dog's chest, a bubble trapped in an old window, a glimpse of Saturn's rings shivering in a telescope lens—knowing that behind the thing itself is a long chain of cause and effects that veers off into the shadows of prehistory, anchored somewhere near the dawn of time, even though the end result is somehow *right there in front of you*, shimmering in place.",
+			"definition": "the haunting sense of mystery infused into certain random details tht beckons you to wonder how it ended up here at this point in time—marveling at a patch of white on a dog's chest, a bubble trapped in an old window, a glimpse of Saturn's rings shivering in a telescope lens—knowing that behind the thing itself is a long chain of cause and effects that veers off into the shadows of prehistory, anchored somewhere near the dawn of time, even though the end result is somehow <em>right there in front of you</em>, shimmering in place.",
 			"etymology": "Indonesian <em>eksis</em>, to exist, to be. Pronounced \"<em>ek</em>-sis.\""
 		},
 		{
@@ -2707,7 +2707,7 @@
 			"slug": "beloiter",
 			"name": "beloiter",
 			"type": 4,
-			"definition": "to look around in a state of mild astonishment that your life is somehow *still going*, as if a part of you had just assumed that your allotment of days would've been used up by now, standing there like a player at a slot machine, perpetually surprised that your winnings continue to trickle out, but not sure what you're supposed to do now.",
+			"definition": "to look around in a state of mild astonishment that your life is somehow <em>still going</em>, as if a part of you had just assumed that your allotment of days would've been used up by now, standing there like a player at a slot machine, perpetually surprised that your winnings continue to trickle out, but not sure what you're supposed to do now.",
 			"etymology": "From <em>to be</em> + <em>to loiter</em>, to hang around someplace with no particular agenda. Pronounced \"bih-<em>loi</em>-ter.\""
 		},
 		{
