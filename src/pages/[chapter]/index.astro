@@ -19,15 +19,15 @@ const chapter = dictionary.chapters[Astro.params.chapter!];
 				<h1>{chapter.name}</h1>
 
 				{
-					chapter.quotes.map((chapter) => (
+					chapter.quotes.map((quote) => (
 						<figure class="prose-blockquote:font-normal prose-blockquote:not-italic">
 							<blockquote
-								class="not-prose whitespace-pre text-neutral-300 [&>p]:text-justify"
-								set:html={chapter.body}
+								class:list={["not-prose text-neutral-300 [&>p]:text-justify", chapter.id < 2 && "whitespace-pre"]}
+								set:html={quote.body}
 							/>
 
 							<figcaption>
-								&mdash; {chapter.author}, <cite>{chapter.source}</cite>
+								&mdash; {quote.author}, <cite>{quote.source}</cite>
 							</figcaption>
 						</figure>
 					))
