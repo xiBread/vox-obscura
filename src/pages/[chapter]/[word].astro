@@ -33,14 +33,14 @@ const types: Record<number, string> = {
 	<div class="flex h-screen items-center justify-center">
 		<a
 			href={`/${chapter}`}
-			class="absolute top-0 m-8 font-mono text-sm text-neutral-500 hover:text-neutral-200"
+			class="absolute top-0 m-8 font-mono text-neutral-500 hover:text-neutral-200"
 		>
 			{dictionary.chapters[chapter!].name}
 		</a>
 
 		<dl class="prose !prose-invert prose-neutral px-10">
 			<dt>
-				<h1>{currentWord.name}</h1>
+				<h1 class="text-5xl">{currentWord.name}</h1>
 			</dt>
 
 			<dd class="text-justify">
