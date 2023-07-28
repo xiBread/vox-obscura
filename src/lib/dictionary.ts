@@ -26,6 +26,8 @@ export interface Word extends Metadata {
 	etymology: string;
 }
 
+const words = Object.values(wordData).flat();
+
 export default {
 	chapters: Object.entries(wordData).reduce<Record<string, Chapter>>(
 		(all, [slug, words], i) => ({
@@ -37,10 +39,8 @@ export default {
 		}),
 		{}
 	),
-	words: Object.values(wordData).flat(),
+	words,
 	get: (slug: string): Word => {
-		return Object.values(wordData)
-			.flat()
-			.find((word) => word.slug === slug)!;
+		return words.find((word) => word.slug === slug)!;
 	},
 };
