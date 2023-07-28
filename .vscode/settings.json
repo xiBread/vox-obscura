@@ -1,3 +1,7 @@
 {
-	"markdown.validate.enabled": false
+	"markdown.validate.enabled": false,
+	"[json]": {
+		"editor.wordWrap": "wordWrapColumn",
+		"editor.wordWrapColumn": 160
+	}
 }
