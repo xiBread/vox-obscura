@@ -4,8 +4,7 @@ export interface Props {
 }
 ---
 
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth antialiased">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -27,7 +26,7 @@ export interface Props {
 		<title>{Astro.props.title} &bullet; Vox Obscura</title>
 	</head>
 
-	<body class="bg-[#0a0a0a] text-white [overflow:overlay]">
+	<body class="bg-neutral-950 text-white [overflow:overlay]">
 		<main class="flex flex-col">
 			<slot />
 		</main>
@@ -57,11 +56,10 @@ export interface Props {
 </html>
 
 <style is:global>
-	html {
+	body {
 		font-family: "Inter var", sans-serif;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		scroll-behavior: smooth;
+		/* Super awkward fix to double shades... No clue what's happening here */
+		outline: theme(colors.neutral.950) solid 1px;
 	}
 
 	body::-webkit-scrollbar {
