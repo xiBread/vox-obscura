@@ -1,6 +1,6 @@
 ---
+import { Content } from "../data/about.md";
 import Layout from "../layouts/Layout.astro";
-import { Content as About } from "../data/about.md";
 ---
 
 <Layout title="About">
@@ -9,7 +9,7 @@ import { Content as About } from "../data/about.md";
 			<article
 				class="prose !prose-invert prose-neutral max-w-3xl text-justify [&_a]:decoration-neutral-400 [&_a]:underline-offset-2 hover:[&_a]:decoration-neutral-300"
 			>
-				<About />
+				<Content />
 			</article>
 		</div>
 	</div>
