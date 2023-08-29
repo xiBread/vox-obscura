@@ -13,11 +13,16 @@
 	"prettier": {
 		"tabWidth": 4,
 		"useTabs": true,
-		"printWidth": 100
+		"printWidth": 100,
+		"plugins": [
+			"prettier-plugin-astro",
+			"prettier-plugin-tailwindcss"
+		]
 	},
 	"dependencies": {
 		"@astrojs/tailwind": "^4.0.0",
 		"astro": "^2.9.5",
+		"astro-google-fonts-optimizer": "^0.2.2",
 		"tailwindcss": "^3.3.3"
 	},
 	"devDependencies": {
@@ -28,6 +33,7 @@
 		"eslint-config-prettier": "^8.9.0",
 		"eslint-plugin-astro": "^0.27.2",
 		"prettier": "^3.0.0",
+		"prettier-plugin-astro": "^0.11.0",
 		"prettier-plugin-tailwindcss": "^0.4.1"
 	}
 }

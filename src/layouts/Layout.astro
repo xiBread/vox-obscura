@@ -1,4 +1,6 @@
 ---
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
+
 export interface Props {
 	title: string;
 }
@@ -8,6 +10,7 @@ export interface Props {
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
 
 		<link rel="icon" type="image/svg+xml" href="/logo.svg" />
 
@@ -16,18 +19,21 @@ export interface Props {
 
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap"
-		/>
 
-		<meta name="generator" content={Astro.generator} />
+		{
+			() => (
+				<>
+					<GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500;1,600;1,700&display=swap" />
+					<GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap" />
+				</>
+			)
+		}
 
 		<title>{Astro.props.title} &bullet; Vox Obscura</title>
 	</head>
 
 	<!-- Outline needed to fix margin collapsing -->
-	<body class="bg-neutral-950 text-white [overflow:overlay] outline-1 outline outline-neutral-950">
+	<body class="bg-neutral-950 text-white outline-1 outline outline-neutral-950">
 		<main class="flex flex-col">
 			<slot />
 		</main>
