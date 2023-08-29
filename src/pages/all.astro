@@ -1,6 +1,6 @@
 ---
+import dictionary, { type Word } from "../dictionary";
 import Layout from "../layouts/Layout.astro";
-import dictionary, { type Word } from "../lib/dictionary";
 
 const groups = dictionary.words
 	.map((word) => ({

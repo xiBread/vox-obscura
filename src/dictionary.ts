@@ -1,5 +1,5 @@
-import chapterData from "../data/chapters.json";
-import wordData from "../data/words.json";
+import chapterData from "./data/chapters.json";
+import wordData from "./data/words.json";
 
 interface Metadata {
 	id: number;

@@ -1,7 +1,7 @@
 ---
 import type { GetStaticPathsResult } from "astro";
+import dictionary from "../../dictionary";
 import Layout from "../../layouts/Layout.astro";
-import dictionary from "../../lib/dictionary";
 
 export function getStaticPaths(): GetStaticPathsResult {
 	return Object.values(dictionary.chapters).reduce<GetStaticPathsResult>(
