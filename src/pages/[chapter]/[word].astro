@@ -14,7 +14,7 @@ export function getStaticPaths(): GetStaticPathsResult {
 				},
 			})),
 		],
-		[]
+		[],
 	);
 }
 
@@ -43,11 +43,11 @@ const types: Record<number, string> = {
 				<h1 class="text-5xl">{currentWord.name}</h1>
 			</dt>
 
-			<dd class="text-justify">
-				<p><em>{types[currentWord.type]}</em> {currentWord.definition}</p>
+			<dd class="pl-0 text-justify">
+				<p><em>{types[currentWord.type]}</em>{" "}{currentWord.definition}</p>
 			</dd>
 
-			<dd class="text-justify text-sm text-neutral-400">
+			<dd class="pl-0 text-justify text-sm text-neutral-400">
 				<p set:html={currentWord.etymology} />
 			</dd>
 		</dl>
