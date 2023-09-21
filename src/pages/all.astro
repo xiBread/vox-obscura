@@ -8,7 +8,7 @@ const groups = dictionary.words
 		name: word.name.replace(/^the (.+)/, "$1, the"),
 	}))
 	.reduce<Record<string, Word[]>>((group, word) => {
-		(group[word.slug[0].toUpperCase()] ??= []).push(word);
+		(group[word.name[0].replace(/\u00E9/, "e")] ??= []).push(word);
 
 		return group;
 	}, {});
@@ -24,7 +24,7 @@ const groups = dictionary.words
 						<div>
 							<ol class="relative inline-block space-y-2">
 								<span class="absolute -left-4 -top-4 text-5xl font-semibold text-neutral-500/30">
-									{group}
+									{group.toUpperCase()}
 								</span>
 
 								{groups[group]
