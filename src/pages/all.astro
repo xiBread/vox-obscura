@@ -8,7 +8,8 @@ const groups = dictionary.words
 		name: word.name.replace(/^the (.+)/, "$1, the"),
 	}))
 	.reduce<Record<string, Word[]>>((group, word) => {
-		(group[word.name[0].replace(/\u00E9/, "e")] ??= []).push(word);
+		const letter = word.name[0].replace(/\u00E9/, "e").toLowerCase();
+		(group[letter] ??= []).push(word);
 
 		return group;
 	}, {});
