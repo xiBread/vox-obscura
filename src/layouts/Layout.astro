@@ -7,7 +7,7 @@ export interface Props {
 }
 ---
 
-<html lang="en" class="scroll-smooth antialiased">
+<html lang="en" class="antialiased">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -21,16 +21,32 @@ export interface Props {
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-		{
-			() => (
-				<>
-					<GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500;1,600;1,700&display=swap" />
-					<GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap" />
-				</>
-			)
-		}
-
 		<title>{Astro.props.title} &bullet; Vox Obscura</title>
+
+		<GoogleFontsOptimizer
+			url="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500;1,600;1,700&display=swap"
+		/>
+		<GoogleFontsOptimizer
+			url="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap"
+		/>
+
+		<style is:global>
+			body {
+				font-family: "Inter var", sans-serif;
+			}
+
+			body::-webkit-scrollbar {
+				width: 10px;
+			}
+
+			body::-webkit-scrollbar-thumb {
+				background: theme("colors.neutral.700" / 50%);
+			}
+
+			body::-webkit-scrollbar-thumb:hover {
+				background: theme("colors.neutral.700" / 90%);
+			}
+		</style>
 	</head>
 
 	<!-- Outline needed to fix margin collapsing -->
@@ -62,21 +78,3 @@ export interface Props {
 		</footer>
 	</body>
 </html>
-
-<style is:global>
-	body {
-		font-family: "Inter var", sans-serif;
-	}
-
-	body::-webkit-scrollbar {
-		width: 10px;
-	}
-
-	body::-webkit-scrollbar-thumb {
-		background: theme("colors.neutral.700" / 50%);
-	}
-
-	body::-webkit-scrollbar-thumb:hover {
-		background: theme("colors.neutral.700" / 90%);
-	}
-</style>
