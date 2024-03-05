@@ -18,8 +18,8 @@ export function getStaticPaths(): GetStaticPathsResult {
 	);
 }
 
-const { chapter, word } = Astro.params;
-const currentWord = dictionary.get(word!);
+const { word } = Astro.params;
+const currentWord = dictionary.get(word as string);
 
 const types: Record<number, string> = {
 	1: "n.",
@@ -31,13 +31,6 @@ const types: Record<number, string> = {
 
 <Layout title={currentWord.name}>
 	<div class="flex h-screen items-center justify-center">
-		<a
-			href={`/${chapter}`}
-			class="absolute top-0 m-8 font-mono text-neutral-500 hover:text-neutral-200"
-		>
-			{dictionary.chapters[chapter!].name}
-		</a>
-
 		<dl class="prose prose-neutral !prose-invert px-10">
 			<dt>
 				<h1 class="text-5xl">{currentWord.name}</h1>
