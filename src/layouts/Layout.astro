@@ -1,6 +1,13 @@
 ---
-import "@animxyz/core";
-import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
+import "../app.css";
+import "lenis/dist/lenis.css";
+import "@fontsource-variable/inter";
+import "@fontsource-variable/jetbrains-mono";
+import "@fontsource-variable/playfair-display";
+
+import { Image } from "astro:assets";
+// import { ViewTransitions } from "astro:transitions";
+import grain from "../assets/grain.jpg";
 
 export interface Props {
 	title: string;
@@ -15,66 +22,32 @@ export interface Props {
 
 		<link rel="icon" type="image/svg+xml" href="/logo.svg" />
 
-		<link rel="preconnect" href="https://rsms.me/" />
-		<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
 		<title>{Astro.props.title} &bullet; Vox Obscura</title>
 
-		<GoogleFontsOptimizer
-			url="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500;1,600;1,700&display=swap"
-		/>
-		<GoogleFontsOptimizer
-			url="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap"
-		/>
+		<script src="../init.ts"></script>
 
-		<style is:global>
-			body {
-				font-family: "Inter var", sans-serif;
-			}
-
-			body::-webkit-scrollbar {
-				width: 10px;
-			}
-
-			body::-webkit-scrollbar-thumb {
-				background: theme("colors.neutral.700" / 50%);
-			}
-
-			body::-webkit-scrollbar-thumb:hover {
-				background: theme("colors.neutral.700" / 90%);
-			}
-		</style>
+		<!-- TODO: uncomment once https://github.com/withastro/astro/issues/8512 gets fixed -->
+		<!-- <ViewTransitions /> -->
 	</head>
 
-	<!-- Outline needed to fix margin collapsing -->
-	<body class="bg-neutral-950 text-white outline outline-1 outline-neutral-950">
+	<body class="bg-neutral-950 text-white">
+		<audio id="ambience" src="/ambience.mp3" loop></audio>
+
+		<canvas
+			id="p5-canvas"
+			class="fixed inset-0 -z-20 opacity-0 transition-opacity duration-[1.5s] ease-in-out"
+		>
+		</canvas>
+
+		<Image
+			class="fixed inset-0 -z-10 size-full object-cover opacity-40 mix-blend-difference"
+			src={grain}
+			alt=""
+			loading="eager"
+		/>
+
 		<main class="flex flex-col">
 			<slot />
 		</main>
-
-		<footer class="mt-24 font-mono text-sm">
-			<div class="sm:px-8">
-				<div class="mx-auto max-w-7xl lg:px-8">
-					<div class="border-t border-neutral-800 py-14">
-						<nav class="flex items-center justify-center space-x-6 text-neutral-500">
-							{
-								[
-									["/", "home"],
-									["/all", "index"],
-									["/about", "about"],
-								].map(([to, text]) => (
-									<a href={to} class="hover:text-neutral-200">
-										{text}
-									</a>
-								))
-							}
-						</nav>
-					</div>
-				</div>
-			</div>
-		</footer>
 	</body>
 </html>

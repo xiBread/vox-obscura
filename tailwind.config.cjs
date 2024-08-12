@@ -1,11 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: ["./src/**/*.{astro,html,js,md,mdx}"],
-	darkMode: "class",
 	theme: {
 		extend: {
 			fontFamily: {
-				mono: ["'Roboto Mono'", "monospace"],
+				mono: ["'JetBrains Mono Variable'", "monospace"],
+				// serif: ["'Playfair Display Variable'", "serif"],
 			},
 		},
 	},

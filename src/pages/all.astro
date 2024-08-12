@@ -1,6 +1,7 @@
 ---
-import dictionary, { type Word } from "../dictionary";
 import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import { dictionary, type Word } from "../dictionary";
 
 const groups = dictionary.words
 	.map((word) => ({
@@ -16,28 +17,29 @@ const groups = dictionary.words
 ---
 
 <Layout title="Index">
-	<div class="mb-16 mt-24 flex items-center justify-center font-mono text-neutral-400">
+	<Navigation current="index" />
+
+	<div class="mb-20 mt-32 flex items-center justify-center">
 		<div class="columns-1 gap-x-40 space-y-12 md:columns-2 lg:columns-3">
 			{
 				Object.keys(groups)
 					.sort()
 					.map((group) => (
 						<div>
-							<ol class="relative inline-block space-y-2">
-								<span class="absolute -left-4 -top-4 text-5xl font-semibold text-neutral-500/30">
+							<ol class="relative inline-block space-y-2 font-mono">
+								<h2 class="pointer-events-none absolute -left-4 -top-4 text-5xl font-semibold text-neutral-500/30">
 									{group.toUpperCase()}
-								</span>
+								</h2>
 
 								{groups[group]
 									.sort((a, b) => a.name.localeCompare(b.name))
 									.map((word) => (
 										<li>
 											<a
-												href={`${word.chapter}/${word.slug}`}
+												href={`/${word.chapter}/${word.slug}`}
 												title={`${
 													dictionary.chapters[word.chapter].name
 												}: ${word.name}`}
-												class="hover:text-white"
 											>
 												{word.name}
 											</a>

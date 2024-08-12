@@ -1,0 +1,41 @@
+---
+import chapters from "../data/chapters.json";
+import { romanNumerals } from "../util";
+
+export interface Props {
+	current: "about" | "index" | ({} & string);
+}
+
+const { current } = Astro.props;
+---
+
+<nav class="fixed left-1/2 top-0 z-50 -translate-x-1/2 p-4">
+	<ol class="flex gap-x-8 font-serif text-neutral-500">
+		<li>
+			<a href="/about" aria-current={current === "about" && "page"}>about</a>
+		</li>
+		&mdash;
+		<li>
+			<a title="Home" href="/">Ø</a>
+		</li>
+
+		{
+			Object.values(chapters).map((chapter, i) => (
+				<li>
+					<a
+						title={chapter.name}
+						href={`/${chapter.slug}`}
+						aria-current={current === chapter.slug && "page"}
+					>
+						{romanNumerals[i]}
+					</a>
+				</li>
+			))
+		}
+
+		&mdash;
+		<li>
+			<a href="/all" aria-current={current === "index" && "page"}>index</a>
+		</li>
+	</ol>
+</nav>
