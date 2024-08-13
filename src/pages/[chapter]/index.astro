@@ -68,9 +68,7 @@ const chapter = dictionary.chapters[Astro.params.chapter!];
 		</div>
 	</div>
 
-	<div
-		class="grid-auto grid grid-cols-2 overflow-hidden border-t border-neutral-700/70"
-	>
+	<div id="words" class="grid-auto grid grid-cols-2 overflow-hidden">
 		{
 			chapter.words.map((word) => (
 				<a
@@ -124,8 +122,11 @@ const chapter = dictionary.chapters[Astro.params.chapter!];
 	.grid-cell::after {
 		content: "";
 		position: absolute;
-		background: theme("colors.neutral.700/70");
+		background: theme("colors.neutral.700");
 		z-index: 1;
+		/* Avoid sub-pixel rendering */
+		will-change: transform;
+		transform: translateZ(0);
 	}
 
 	.grid-cell::before {
