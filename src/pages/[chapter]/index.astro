@@ -121,9 +121,11 @@ const chapter = dictionary.chapters[Astro.params.chapter!];
 	.grid-cell::before,
 	.grid-cell::after {
 		content: "";
+		z-index: 1;
 		position: absolute;
 		background: theme("colors.neutral.700");
-		z-index: 1;
+		inset-block-start: 0;
+		inset-inline-start: 0;
 		/* Avoid sub-pixel rendering */
 		will-change: transform;
 		transform: translateZ(0);
@@ -132,14 +134,10 @@ const chapter = dictionary.chapters[Astro.params.chapter!];
 	.grid-cell::before {
 		block-size: 100vh;
 		inline-size: 1px;
-		inset-block-start: 0;
-		inset-inline-start: 0;
 	}
 
 	.grid-cell::after {
 		block-size: 1px;
 		inline-size: 100vw;
-		inset-block-start: 0;
-		inset-inline-start: 0;
 	}
 </style>
