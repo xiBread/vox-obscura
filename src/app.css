@@ -42,7 +42,6 @@
 	}
 
 	.prose h1 {
-		font-family: theme("fontFamily.mono");
 		font-weight: 700;
 	}
 }
