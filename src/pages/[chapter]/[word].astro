@@ -34,7 +34,7 @@ const types: Record<number, string> = {
 	<Navigation current={chapter as string} />
 
 	<div
-		class="fixed top-1/2 hidden w-full -translate-y-1/2 items-center justify-between font-mono text-xs text-neutral-300 md:flex"
+		class="fixed top-1/2 hidden w-full -translate-y-1/2 items-center justify-between font-mono text-xs text-neutral-300 *:opacity-0 md:flex"
 	>
 		<span class="tag ml-2 rotate-180 [writing-mode:vertical-lr]">
 			{dictionary.chapters[chapter!].name}
@@ -44,7 +44,7 @@ const types: Record<number, string> = {
 	</div>
 
 	<div class="flex h-svh items-center justify-center px-6">
-		<dl class="definition prose prose-neutral prose-invert">
+		<dl class="definition prose prose-neutral prose-invert *:opacity-0">
 			<dt>
 				<dfn class="not-italic">
 					<h1 class="mb-0 text-5xl">{currentWord.name}</h1>
@@ -69,12 +69,10 @@ const types: Record<number, string> = {
 <script>
 	import { stagger, timeline } from "motion";
 
-	timeline([
-		[
-			".definition > *",
-			{ y: ["-100%", 0], opacity: [0, 1] },
-			{ delay: stagger(0.25), duration: 1 },
-		],
-		[".tag", { opacity: [0, 1] }, { duration: 1 }],
-	]);
+	document.addEventListener("astro:page-load", () => {
+		timeline([
+			[".definition > *", { opacity: 1 }, { delay: stagger(0.25), duration: 1.5 }],
+			[".tag", { opacity: 1 }, { duration: 1 }],
+		]);
+	});
 </script>

@@ -1,12 +1,11 @@
 ---
 import "../app.css";
-import "lenis/dist/lenis.css";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/jetbrains-mono";
 import "@fontsource-variable/playfair-display";
 
 import { Image } from "astro:assets";
-// import { ViewTransitions } from "astro:transitions";
+import { ViewTransitions } from "astro:transitions";
 import grain from "../assets/grain.jpg";
 
 export interface Props {
@@ -24,16 +23,16 @@ export interface Props {
 
 		<title>{Astro.props.title} &bullet; Vox Obscura</title>
 
-		<script src="../init.ts"></script>
+		<script src="../sketch.ts"></script>
 
-		<!-- TODO: uncomment once https://github.com/withastro/astro/issues/8512 gets fixed -->
-		<!-- <ViewTransitions /> -->
+		<ViewTransitions />
 	</head>
 
 	<body class="bg-neutral-950 text-white">
 		<canvas
 			id="p5-canvas"
 			class="fixed inset-0 -z-20 opacity-0 transition-opacity duration-[1.5s] ease-in-out"
+			transition:persist
 		>
 		</canvas>
 

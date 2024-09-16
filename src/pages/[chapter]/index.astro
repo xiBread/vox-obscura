@@ -18,9 +18,7 @@ const chapter = dictionary.chapters[Astro.params.chapter!];
 	<Navigation current={chapter.slug} />
 
 	<div id="intro" class="h-[500svh] px-6">
-		<div
-			class="ch-intro sticky top-0 flex h-lvh items-center justify-center opacity-0"
-		>
+		<div class="ch-intro sticky top-0 flex h-lvh items-center justify-center">
 			<div class="*:overflow-hidden">
 				<div>
 					<span
@@ -86,32 +84,34 @@ const chapter = dictionary.chapters[Astro.params.chapter!];
 
 <script>
 	import { scroll, timeline, ScrollOffset } from "motion";
+	import { expoInOut } from "../../util";
 
-	timeline(
-		[
-			[".ch-intro", { opacity: 1 }, { duration: 0 }],
-			[".ch-title", { y: ["100%", 0] }],
-			[".ch-number", { y: ["100%", 0] }, { at: "-0.8" }],
-			[".ch-description", { y: ["-100%", 0] }, { at: "-0.8" }],
-		],
-		{
-			defaultOptions: {
-				duration: 1,
-				easing: [0.7, 0, 0.3, 1],
-			},
-		}
-	);
+	document.addEventListener("astro:page-load", () => {
+		timeline(
+			[
+				[".ch-title", { y: ["100%", 0] }],
+				[".ch-number", { y: ["100%", 0] }, { at: "-0.8" }],
+				[".ch-description", { y: ["-100%", 0] }, { at: "-0.8" }],
+			],
+			{
+				defaultOptions: {
+					duration: 1,
+					easing: expoInOut,
+				},
+			}
+		);
 
-	scroll(
-		timeline([
-			[".ch-intro", { opacity: 0 }],
-			[".quote", { opacity: [null, 1, 0] }, { duration: 1 }],
-		]),
-		{
-			target: document.getElementById("intro")!,
-			offset: ScrollOffset.All,
-		}
-	);
+		scroll(
+			timeline([
+				[".ch-intro", { opacity: 0 }],
+				[".quote", { opacity: [null, 1, 0] }, { duration: 1 }],
+			]),
+			{
+				target: document.getElementById("intro")!,
+				offset: ScrollOffset.All,
+			}
+		);
+	});
 </script>
 
 <style>
