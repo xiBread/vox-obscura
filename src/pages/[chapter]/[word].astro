@@ -20,7 +20,14 @@ export function getStaticPaths() {
 }
 
 const { chapter, word } = Astro.params;
+
+const chapterWords = dictionary.chapters[chapter as string].words;
+
 const currentWord = dictionary.get(word as string);
+const currentIdx = chapterWords.indexOf(currentWord);
+
+const prev = chapterWords.at(currentIdx - 1)!;
+const next = chapterWords.at(currentIdx + 1) ?? chapterWords[0];
 
 const types: Record<number, string> = {
 	1: "n.",
@@ -43,15 +50,15 @@ const types: Record<number, string> = {
 		<span class="tag mr-2 [writing-mode:vertical-rl]">Vox Obscura</span>
 	</div>
 
-	<div class="flex h-svh items-center justify-center px-6">
-		<dl class="definition prose prose-neutral prose-invert *:opacity-0">
-			<dt>
+	<div class="mx-auto flex h-svh max-w-3xl flex-col items-center justify-center px-4">
+		<dl class="prose prose-neutral prose-invert max-w-[inherit] *:opacity-0">
+			<dt class="part">
 				<dfn class="not-italic">
-					<h1 class="mb-0 text-5xl">{currentWord.name}</h1>
+					<h1 class="mb-0">{currentWord.name}</h1>
 				</dfn>
 			</dt>
 
-			<dd class="pl-0">
+			<dd class="part pl-0">
 				<p>
 					<span class="italic">{types[currentWord.type]}</span>
 					{" "}
@@ -59,10 +66,18 @@ const types: Record<number, string> = {
 				</p>
 			</dd>
 
-			<dd class="pl-0 text-sm text-neutral-400">
+			<dd class="part pl-0 text-sm text-neutral-400">
 				<p set:html={currentWord.etymology} />
 			</dd>
 		</dl>
+
+		<div class="part my-6 h-px w-full bg-neutral-100/10 opacity-0" role="separator">
+		</div>
+
+		<nav class="part flex w-full justify-between font-mono text-sm opacity-0">
+			<a href={prev.slug}>&lt;[ {prev.name}</a>
+			<a href={next.slug}>{next.name} ]&gt;</a>
+		</nav>
 	</div>
 </Layout>
 
@@ -71,8 +86,8 @@ const types: Record<number, string> = {
 
 	document.addEventListener("astro:page-load", () => {
 		timeline([
-			[".definition > *", { opacity: 1 }, { delay: stagger(0.25), duration: 1.5 }],
-			[".tag", { opacity: 1 }, { duration: 1, at: "-1" }],
+			[".part", { opacity: 1 }, { delay: stagger(0.15), duration: 1.25 }],
+			[".tag", { opacity: 1 }, { duration: 1, at: "-0.75" }],
 		]);
 	});
 </script>
