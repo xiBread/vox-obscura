@@ -1,6 +1,7 @@
 ---
 import chapters from "../data/chapters.json";
 import Layout from "../layouts/Layout.astro";
+import RowLink from "../components/RowLink.astro";
 ---
 
 <Layout title="Home">
@@ -8,32 +9,21 @@ import Layout from "../layouts/Layout.astro";
 		<div class="grid size-full divide-y divide-neutral-700/70 backdrop-blur">
 			{
 				chapters.map((chapter, i) => (
-					<a
-						class="row group flex origin-left items-center border-r border-r-neutral-700/70 bg-black/50 p-6"
-						href={chapter.slug}
-					>
-						<div class="chapter">
-							<span class="font-mono text-xs text-neutral-500">
-								&lbrace;0{i + 1}&rbrace;
-							</span>
-
-							<div class="*:transition-colors *:duration-300">
-								<h2 class="text-lg font-semibold text-neutral-400 group-hover:text-white">
-									{chapter.name}
-								</h2>
-
-								<p class="text-sm text-neutral-500 group-hover:text-neutral-300">
-									{chapter.description}
-								</p>
-							</div>
-						</div>
-					</a>
+					<RowLink
+						order={i + 1}
+						slug={chapter.slug}
+						name={chapter.name}
+						description={chapter.description}
+					/>
 				))
 			}
+
+			<RowLink class="md:hidden" slug="about" name="About" />
+			<RowLink class="md:hidden" slug="index" name="Index" />
 		</div>
 	</nav>
 
-	<nav class="absolute bottom-4 right-6 flex gap-x-2 overflow-hidden text-sm">
+	<nav class="absolute bottom-4 right-6 hidden gap-x-2 overflow-hidden md:flex">
 		<div class="overflow-hidden">
 			<a class="font-mono" href="/about">about</a>
 		</div>
@@ -59,7 +49,7 @@ import Layout from "../layouts/Layout.astro";
 			{ delay: stagger(0.1), duration: 1.5, easing: expoInOut },
 		],
 		[
-			".chapter",
+			".item",
 			{ opacity: [0, 1], y: [-24, 0] },
 			{ delay: stagger(0.15), duration: 1, at: "-0.5" },
 		],
