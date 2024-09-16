@@ -11,16 +11,14 @@ const { current } = Astro.props;
 
 <nav class="fixed left-1/2 top-0 z-50 -translate-x-1/2 p-4">
 	<div class="mx-auto mb-1 flex max-w-max gap-x-2 font-serif text-neutral-500">
-		<a href="/about" aria-current={current === "about" && "page"}>about</a>
+		<a title="Home" href="/">home</a>
 		&mdash;
 		<a href="/all" aria-current={current === "index" && "page"}>index</a>
+		&mdash;
+		<a href="/about" aria-current={current === "about" && "page"}>about</a>
 	</div>
 
 	<ol class="flex gap-x-6 font-serif text-neutral-500">
-		<li>
-			<a title="Home" href="/">Ø</a>
-		</li>
-
 		{
 			Object.values(chapters).map((chapter, i) => (
 				<li>
