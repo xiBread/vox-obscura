@@ -72,7 +72,7 @@ const types: Record<number, string> = {
 	document.addEventListener("astro:page-load", () => {
 		timeline([
 			[".definition > *", { opacity: 1 }, { delay: stagger(0.25), duration: 1.5 }],
-			[".tag", { opacity: 1 }, { duration: 1 }],
+			[".tag", { opacity: 1 }, { duration: 1, at: "-1" }],
 		]);
 	});
 </script>
