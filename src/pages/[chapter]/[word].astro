@@ -34,7 +34,7 @@ const types: Record<number, string> = {
 	<Navigation current={chapter as string} />
 
 	<div
-		class="fixed top-1/2 flex w-full -translate-y-1/2 items-center justify-between font-mono text-xs text-neutral-300"
+		class="fixed top-1/2 hidden w-full -translate-y-1/2 items-center justify-between font-mono text-xs text-neutral-300 md:flex"
 	>
 		<span class="tag ml-2 rotate-180 [writing-mode:vertical-lr]">
 			{dictionary.chapters[chapter!].name}
