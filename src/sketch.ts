@@ -2,11 +2,7 @@ import p5 from "p5";
 import fragment from "./assets/frag.glsl";
 import vertex from "./assets/vert.glsl";
 
-const uniforms = {
-	time: 0,
-	noiseSize: 1.5,
-	offset: [0, 0],
-};
+let time = 0;
 
 new p5((p5: p5) => {
 	let sample: p5.Image;
@@ -56,12 +52,11 @@ new p5((p5: p5) => {
 		}
 
 		sample.updatePixels();
-		uniforms.time += 0.06 * dt;
+		time += 0.06 * dt;
 
-		shader.setUniform("uTime", uniforms.time);
+		shader.setUniform("uTime", time);
 		shader.setUniform("uAspect", p5.width / p5.height);
-		shader.setUniform("uNoiseSize", uniforms.noiseSize);
-		shader.setUniform("uOffset", uniforms.offset);
+		shader.setUniform("uNoiseSize", 1.5);
 		shader.setUniform("uSampler", sample);
 
 		p5.push();

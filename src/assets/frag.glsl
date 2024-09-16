@@ -103,6 +103,6 @@ void main(void) {
 	float noise = (cnoise(noisePos) + 1.0) * 0.5;
 	noise = clamp(noise, 0.0, 1.0);
 
-	vec4 paletteColor = texture2D(uSampler, vec2(0.5,noise));
+	vec4 paletteColor = texture2D(uSampler, vec2(0.5, noise));
 	gl_FragColor = paletteColor;
 }
