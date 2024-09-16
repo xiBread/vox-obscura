@@ -53,7 +53,6 @@ import RowLink from "../components/RowLink.astro";
 			{ opacity: [0, 1], y: [-24, 0] },
 			{ delay: stagger(0.15), duration: 1, at: "-0.5" },
 		],
-		["#sound-control", { y: [-24, 0] }, { duration: 0.75, at: "-0.5" }],
 		[
 			"nav:last-of-type > *",
 			{ y: [24, 0] },
@@ -61,3 +60,9 @@ import RowLink from "../components/RowLink.astro";
 		],
 	]);
 </script>
+
+<style is:global>
+	.row {
+		transform: scaleX(0);
+	}
+</style>
