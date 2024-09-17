@@ -51,6 +51,7 @@
 			"slug": "vemodalen",
 			"name": "vemödalen",
 			"type": 1,
+			"audio": true,
 			"definition": "the fear that originality is no longer possible.",
 			"etymology": "Swedish <em>vemod</em>, tender sadness, pensive melancholy + <em>Vemdalen</em>, the name of a Swedish town, which is the kind of thing that IKEA usually borrows to give names to their products. Pronounced \"<em>vey</em>-moh-dah-len.\""
 		},
@@ -114,6 +115,7 @@
 			"slug": "astrophe",
 			"name": "astrophe",
 			"type": 1,
+			"audio": true,
 			"definition": "the feeling of being stuck on Earth.",
 			"etymology": "Ancient Greek άστρον (<em>ástron</em>), star + άτροφία (<em>atrophía</em>), a wasting away due to lack of use. Pronounced \"<em>as</em>-truh-fee.\""
 		},
@@ -267,6 +269,7 @@
 			"slug": "ballagarraidh",
 			"name": "ballagàrraidh",
 			"type": 1,
+			"audio": true,
 			"definition": "the awareness that you are not at home in the wilderness.",
 			"etymology": "Scottish Gaelic <em>balla gàrraidh</em>, garden wall. Pronounced \"bal-luh-gah-<em>rahy</em>\" or \"bah-lah-<em>ghaw</em>-rah.\""
 		},
@@ -366,6 +369,7 @@
 			"slug": "onism",
 			"name": "onism",
 			"type": 1,
+			"audio": true,
 			"definition": "the frustration of being stuck in just one body, that inhabits only one place at a time, which is like standing in front of the departures screen at an airport, flickering over with strange place names like other people's passwords, each representing one more thing you'll never get to see before you die—and all because, as the arrow on the map helpfully points out, you are here.",
 			"etymology": "In philosophy, <em>monism</em> is the belief that a wide variety of things can be explained in terms of a single reality, substance, or source. <em>Onism</em> is a kind of monism&mdash;your life is indeed limited to a single reality by virtue of being restricted to a single body&mdash;but something is clearly missing. Pronounced \"<em>oh</em>-niz-uhm.\""
 		}
@@ -458,6 +462,7 @@
 			"slug": "koinophobia",
 			"name": "koinophobia",
 			"type": 1,
+			"audio": true,
 			"definition": "the fear that you've lived an ordinary life.",
 			"etymology": "Ancient Greek κοινός (<em>koinós</em>), common, ordinary, stripped of specialness + -φοβία (-<em>phobia</em>), fear. Pronounced \"key-noh-<em>foh</em>-bee-uh.\""
 		},
@@ -566,6 +571,7 @@
 			"slug": "kudoclasm",
 			"name": "kudoclasm",
 			"type": 1,
+			"audio": true,
 			"definition": "a cascading crisis of self-doubt.",
 			"etymology": "Ancient Greek κῦδος (<em>kûdos</em>), glory, praise + κλάω (<em>kláō</em>), to break down. Pronounced \"<em>koo</em>-doh-klaz-uhm.\""
 		},
@@ -674,6 +680,7 @@
 			"slug": "alazia",
 			"name": "alazia",
 			"type": 1,
+			"audio": true,
 			"definition": "the fear that you're no longer able to change.",
 			"etymology": "Greek αλλάζω (<em>allázo</em>), to change + <em>dysplasia</em>, abnormal development of tissue. Pronounced \"uh-<em>ley</em>-zhuh\" or \"ah-<em>ley</em>-zee-uh\"."
 		},
@@ -863,6 +870,7 @@
 			"slug": "ambedo",
 			"name": "ambedo",
 			"type": 1,
+			"audio": true,
 			"definition": "a kind of melancholic trance in which you become completely absorbed in vivid sensory details—raindrops skittering down a window, tall trees leaning in the wind, clouds of cream swirling in your coffee.",
 			"etymology": "Latin <em>ambedo</em>, \"I sink my teeth into.\" Pronounced \"am-<em>bee</em>-doh.\""
 		}
@@ -937,6 +945,7 @@
 			"slug": "opia",
 			"name": "opia",
 			"type": 1,
+			"audio": true,
 			"definition": "the ambiguous intensity of looking someone in the eye, which can feel simultaneously invasive and vulnerable—their pupils glittering, bottomless and opaque—as if you were peering through a hole in the door of a house, able to tell that there's someone standing there, but unable to tell if you're looking in or looking out.",
 			"etymology": "Greek óπιο (ópio), opium + ωπία (-<em>opía</em>), of the eyes. The word <em>pupil</em> is from the Latin <em>pupilla</em>, \"little girl-doll,\" a reference to the tiny image of yourself you see reflected in the eyes of another. This idea was the origin of the Elizabethan expression <em>to look babies</em>, which means \"to stare lovingly into another's eyes.\" Pronounced \"<em>oh</em>-pee-uh.\""
 		},
@@ -1090,6 +1099,7 @@
 			"slug": "moment-of-tangency",
 			"name": "moment of tangency",
 			"type": 1,
+			"audio": true,
 			"definition": "a fleeting glimpse of what might have been.",
 			"etymology": "In geometry, a <em>tangent</em> is the point at which a line \"just touches\" a curve, where they share precisely the same angle, before separating again and carrying on to infinity."
 		},
@@ -1389,6 +1399,7 @@
 			"slug": "sonder",
 			"name": "sonder",
 			"type": 1,
+			"audio": true,
 			"definition": "the realization that each random passerby is living a life as vivid and complex as your own—populated with their own ambitions, friends, routines, worries, and inherited craziness—an epic story that continues invisibly around you like an anthill sprawling deep underground, with elaborate passageways to thousands of other lives that you'll never know exist, in which you might appear only once, as an extra sipping coffee in the background, as a blur of traffic passing on the highway, as a lighted window at dusk.",
 			"etymology": "French <em>sonder</em>, to plumb the depths. Pronounced \"<em>sahn</em>-der.\" Can be used as a noun or a verb, as you would use the word <em>wonder</em>."
 		},
@@ -1542,6 +1553,7 @@
 			"slug": "paro",
 			"name": "pâro",
 			"type": 1,
+			"audio": true,
 			"definition": "the feeling that everything you do is always somehow wrong—that there's nothing you can eat that's actually healthy, nothing you can say that isn't problematic, no way to raise your kids that won't leave them traumatized—which makes you wonder if there's some obvious way forward that everybody can see but you, each of them leaning back in their chair and calling out helpfully, \"Colder...colder...colder\"",
 			"etymology": "From <em>par 0</em> (<em>par zero</em>), a theoretical hole on a golf course in which it's already too late&mdash;no matter how well you hit the ball, you've already fallen behind. The circumflex on the <em>â</em> is a tiny symbol of someone trying for something then retreating. Compare the Spanish <em>paro</em>, a stoppage or a freezing up. Pronounced \"<em>pahr</em>-oh.\""
 		},
@@ -1560,6 +1572,7 @@
 			"slug": "socha",
 			"name": "socha",
 			"type": 1,
+			"audio": true,
 			"definition": "the hidden vulnerability of others.",
 			"etymology": "Czech <em>socha</em>, statue. Pronounced \"<em>soh</em>-khuh.\""
 		},
@@ -1668,6 +1681,7 @@
 			"slug": "silience",
 			"name": "silience",
 			"type": 1,
+			"audio": true,
 			"definition": "the brilliant artistry hidden all around you.",
 			"etymology": "From <em>silent</em> + <em>brilliance</em>. In a 2007 experiment, violen virtuoso Joshual Bell tried his hand at busking in a subway station, playing for nearly an hour on his priceless Stradivarius. In the end, only seven of a thousand passersby stopped to listen. No applause. He collected $32. But as <em>Washington Post</em> writer Gene Weingarten observed, \"Every single time a child walked past, he or she tried to stop and watch. And every single time, a parent scooted the kid away.\" Pronounced \"<em>sil</em>-ee-uhns.\""
 		},
@@ -1821,6 +1835,7 @@
 			"slug": "lutalica",
 			"name": "lutalica",
 			"type": 1,
+			"audio": true,
 			"definition": "the sense that you're more than the categories that society puts you in.",
 			"etymology": "Serbo-Croatian <em>lútalica</em>, a wanderer or stray animal. Pronounced \"loo-<em>tal</em>-i-kuh.\""
 		},
@@ -1868,6 +1883,7 @@
 			"slug": "zenosyne",
 			"name": "zenosyne",
 			"type": 1,
+			"audio": true,
 			"definition": "the feeling that time is getting faster.",
 			"etymology": "In philosophy, <em>Zeno's dichotomy paradox</em> asks how a person can walk from one point to another if they must first cross a seeming infinity of halfway points, which makes their journey look like a series of ever-shrinking steps + <em>Mnemosyne</em>, the personification of memory in Ancient Greek mythology. Pronounced \"ze-<em>nos</em>-uhn-ee.\""
 		},
@@ -1949,6 +1965,7 @@
 			"slug": "anemoia",
 			"name": "anemoia",
 			"type": 1,
+			"audio": true,
 			"definition": "nostalgia for a time you never experienced.",
 			"etymology": "Ancient Greek ἄνεμος (<em>ánemos</em>), wind + νόος (<em>nóos</em>), mind. Compare <em>anemosis</em>, which occurs when a  tree is warped by strong air currents until it seems to bend backward, leaning into the wind.  Pronounced \"an-uh-<em>moi</em>-uh.\""
 		},
@@ -2012,6 +2029,7 @@
 			"slug": "klexos",
 			"name": "klexos",
 			"type": 1,
+			"audio": true,
 			"definition": "the art of dwelling on the past.",
 			"etymology": "From <em>klecksography</em>, which is the art of making images from inkblots, famously used in Rorschach  psychoanalytic tests. Interpreting their ambiguity is thought to illuminate the subconscious of the  patient. Pronounced \"<em>kleks</em>-ohs.\""
 		},
@@ -2057,6 +2075,7 @@
 			"slug": "morii",
 			"name": "morii",
 			"type": 1,
+			"audio": true,
 			"definition": "the desire to capture a fleeting experience.",
 			"etymology": "From <em>memento mori</em>, a small reminder of your mortality + <em>torii</em>, traditional Japanese gates that  mark the threshold between the profane and the sacred. Pronounced \"<em>moh</em>-ree.\""
 		},
@@ -2093,6 +2112,7 @@
 			"slug": "avenoir",
 			"name": "avenoir",
 			"type": 1,
+			"audio": true,
 			"definition": "the desire to see your memories in advance.",
 			"etymology": "French <em>avenir</em>, future + <em>avoir</em>, to have. Pronounced \"av-uh-<em>nwar</em>.\""
 		},
@@ -2138,6 +2158,7 @@
 			"slug": "kenopsia",
 			"name": "kenopsia",
 			"type": 1,
+			"audio": true,
 			"definition": "the eerie, forlorn atmosphere of a place that's usually bustling with people but is now abandoned and quiet—a school hallway in the evening, an unlit office on a weekend, vacant fairgrounds—an emotional afterimage that makes it seem not just empty but hyper-empty, with a total population in the negative, who are so conspicuously absent they glow like neon signs.",
 			"etymology": "Ancient Greek κενό, emptiness + -οψία (-<em>opsía</em>), seeing. Pronounced \"ken-<em>op</em>-see-uh.\""
 		},
@@ -2273,6 +2294,7 @@
 			"slug": "des-vu",
 			"name": "dès vu",
 			"type": 1,
+			"audio": true,
 			"definition": "the awareness that this moment will become a memory.",
 			"etymology": "French <em>dès vu</em>, seen as of now. Alternately <em>sera vu</em>, will be seen. Akin to the feeling of <em>déjà vu</em>, but in the reverse order&mdash;already remembering something as you're living it. Pronounced \"dey <em>voo</em>.\""
 		},
@@ -2336,6 +2358,7 @@
 			"slug": "oleka",
 			"name": "olēka",
 			"type": 1,
+			"audio": true,
 			"definition": "the awareness of how few days are memorable.",
 			"etymology": "Greek ἀπολώλεκα (<em>apolóleka</em>), I've lost it. The lyric quoted at the end is from Nada Surf's song \"Là pour ça.\" In the original French: \"Vive la marée haute et vive la basse, / Mais surtout vive la différence.\" Pronounced \"oh-<em>lee</em>-kuh.\""
 		},
@@ -2381,6 +2404,7 @@
 			"slug": "yu-yi",
 			"name": "yu yi",
 			"type": 1,
+			"audio": true,
 			"definition": "the desire to see with fresh eyes, and feel things just as intensely as you did when you were younger—before expectations, before memory, before words.",
 			"etymology": "Ancient Chinese ?? (<em>yú yi</em>), I remember. Compare the Mandarin 玉衣 (yù yī), jade suit. Before their  burial, the corpses of Han dynasty royals were clothed in ceremonial garments made of jade&mdash;a  stone believed to have preservative properties, Even then, thousands of years ago, people were  trying to protect themselves from the ravages of time by becoming \"jaded.\" Pronounced \"yoo yee.\""
 		}
@@ -2455,6 +2479,7 @@
 			"slug": "nodus-tollens",
 			"name": "nodus tollens",
 			"type": 1,
+			"audio": true,
 			"definition": "the realization that the plot of your life doesn't make sense to you anymore—that although you thought you were following the arc of the story, you keep finding yourself immersed in passages you don't understand, that don't even seem to belong in the same genre—which requires you to go back and reread the chapters you had originally skimmed to get to the good parts, only to learn that all along you were supposed to choose your own adventure.",
 			"etymology": "Latin <em>nodus tollens</em>, literally \"the knot that denies by denying.\" In propositional logic,  <em>modus tollens</em> with an (<em>m</em>) is a kind of argument that goes like this: \"If P, then Q. But Q is  not. Therefore, P must not be.\" Also known as going back and questioning your first assumptions when  things don't work out the way you expected. Pronounced \"<em>noh</em>-dus <em>tah</em>-luhns.\""
 		},
@@ -2590,6 +2615,7 @@
 			"slug": "lachesism",
 			"name": "lachesism",
 			"type": 3,
+			"audio": true,
 			"definition": "longing for the clarity of disaster.",
 			"etymology": "In Ancient Greek mythology, Lachesis is the middle of the three Fates, the one who decides how much  time is to be allotted to each of us, measuring out the thread of lfie with her rod. Pronounced  \"<em>lahk</em>-uh-siz-uhm.\""
 		},

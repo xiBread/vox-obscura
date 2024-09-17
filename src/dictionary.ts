@@ -21,6 +21,7 @@ interface ChapterQuote {
 
 export interface Word extends Metadata {
 	type: number;
+	audio?: boolean;
 	chapter: string;
 	definition: string;
 	etymology: string;

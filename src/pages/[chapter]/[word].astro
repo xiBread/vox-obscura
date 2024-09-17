@@ -3,6 +3,7 @@ import type { GetStaticPathsResult } from "astro";
 import { dictionary } from "../../dictionary";
 import Layout from "../../layouts/Layout.astro";
 import Navigation from "../../components/Navigation.astro";
+import Audio from "../../components/Audio.astro";
 
 export function getStaticPaths() {
 	return Object.values(dictionary.chapters).reduce<GetStaticPathsResult>(
@@ -41,7 +42,7 @@ const types: Record<number, string> = {
 	<Navigation current={chapter as string} />
 
 	<div
-		class="fixed top-1/2 hidden w-full -translate-y-1/2 items-center justify-between font-mono text-xs text-neutral-300 *:opacity-0 md:flex"
+		class="fixed top-1/2 -z-10 hidden w-full -translate-y-1/2 items-center justify-between font-mono text-xs text-neutral-300 *:opacity-0 md:flex"
 	>
 		<span class="tag ml-2 rotate-180 [writing-mode:vertical-lr]">
 			{dictionary.chapters[chapter!].name}
@@ -70,6 +71,8 @@ const types: Record<number, string> = {
 				<p set:html={currentWord.etymology} />
 			</dd>
 		</dl>
+
+		{currentWord.audio && <Audio slug={currentWord.slug} />}
 
 		<div class="part my-6 h-px w-full bg-neutral-100/10 opacity-0" role="separator">
 		</div>
