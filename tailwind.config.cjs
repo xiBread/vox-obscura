@@ -5,7 +5,6 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				mono: ["'JetBrains Mono Variable'", "monospace"],
-				// serif: ["'Playfair Display Variable'", "serif"],
 			},
 		},
 	},
