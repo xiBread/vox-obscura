@@ -23,7 +23,9 @@ import RowLink from "../components/RowLink.astro";
 		</div>
 	</nav>
 
-	<nav class="absolute bottom-4 right-6 hidden gap-x-2 overflow-hidden md:flex">
+	<nav
+		class="nav-extra absolute bottom-4 right-6 hidden gap-x-2 overflow-hidden md:flex"
+	>
 		<div class="overflow-hidden">
 			<a class="font-mono" href="/about">about</a>
 		</div>
@@ -55,7 +57,7 @@ import RowLink from "../components/RowLink.astro";
 				{ delay: stagger(0.15), duration: 1, at: "-0.5" },
 			],
 			[
-				"nav:last-of-type > *",
+				".nav-extra > *",
 				{ y: [24, 0] },
 				{ delay: stagger(0.1), duration: 0.75, at: "-0.5" },
 			],
