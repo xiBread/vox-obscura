@@ -1,7 +1,9 @@
 ---
 import type { GetStaticPathsResult } from "astro";
-import dictionary from "../../dictionary";
 import Layout from "../../layouts/Layout.astro";
+import Navigation from "../../components/Navigation.astro";
+import { dictionary } from "../../dictionary";
+import { romanNumerals } from "../../util";
 
 export function getStaticPaths(): GetStaticPathsResult {
 	return Object.keys(dictionary.chapters).map((slug) => ({
@@ -13,21 +15,48 @@ const chapter = dictionary.chapters[Astro.params.chapter!];
 ---
 
 <Layout title={chapter.name}>
-	<div class="flex flex-col justify-center">
-		<div class="mt-24 flex justify-center px-16">
-			<article class="prose !prose-invert prose-neutral">
-				<h1>{chapter.name}</h1>
+	<Navigation current={chapter.slug} />
 
+	<div id="intro" class="h-[500svh] px-6">
+		<div class="ch-intro sticky top-0 flex h-lvh items-center justify-center">
+			<div class="*:overflow-hidden">
+				<div>
+					<span
+						class="ch-number inline-block font-serif text-2xl tracking-wide"
+					>
+						{romanNumerals[chapter.id]}
+					</span>
+				</div>
+
+				<div>
+					<h1 class="ch-title text-5xl font-black uppercase">{chapter.name}</h1>
+				</div>
+
+				<div>
+					<h2 class="ch-description text-neutral-300">
+						{chapter.description}
+					</h2>
+				</div>
+			</div>
+		</div>
+
+		<div
+			id="quotes"
+			class="sticky top-0 -mt-[100vh] flex h-lvh items-center justify-center"
+		>
+			<div class="flex flex-col gap-y-6 overflow-hidden">
 				{
 					chapter.quotes.map((quote) => (
-						<figure class="prose-blockquote:font-normal prose-blockquote:not-italic">
-							<blockquote
-								class:list={[
-									"not-prose text-neutral-300 [&>p]:text-justify",
-									chapter.id < 2 && "whitespace-pre",
-								]}
-								set:html={quote.body}
-							/>
+						<figure class="quote prose prose-neutral prose-invert font-serif opacity-0">
+							<blockquote class="not-italic text-neutral-300">
+								<p
+									class:list={[
+										"text-justify before:hidden",
+										chapter.id < 2 && "whitespace-pre",
+									]}
+									set:html={quote.body}
+								/>
+							</blockquote>
 
 							<figcaption>
 								&mdash; {quote.author}, <cite>{quote.source}</cite>
@@ -35,22 +64,83 @@ const chapter = dictionary.chapters[Astro.params.chapter!];
 						</figure>
 					))
 				}
-			</article>
-		</div>
-
-		<div
-			class="mx-auto my-20 grid grid-cols-2 gap-8 px-8 text-center font-mono text-neutral-400 sm:gap-x-24 md:grid-cols-3 md:gap-x-16 lg:gap-x-32 2xl:grid-cols-4"
-		>
-			{
-				chapter.words.map((word) => (
-					<a
-						href={`${word.chapter}/${word.slug}`}
-						class="my-4 place-self-center hover:text-white"
-					>
-						{word.name}
-					</a>
-				))
-			}
+			</div>
 		</div>
 	</div>
+
+	<div id="words" class="grid-auto grid grid-cols-2 overflow-hidden">
+		{
+			chapter.words.map((word) => (
+				<a
+					class="grid-cell relative aspect-square break-words p-4 transition-colors duration-1000 hover:bg-black/50 hover:duration-0"
+					href={`/${word.chapter}/${word.slug}`}
+				>
+					<span class="text-3xl text-white">{word.name}</span>
+				</a>
+			))
+		}
+	</div>
 </Layout>
+
+<script>
+	import { scroll, timeline, ScrollOffset } from "motion";
+	import { expoInOut } from "../../util";
+
+	document.addEventListener("astro:page-load", () => {
+		timeline(
+			[
+				[".ch-title", { y: ["100%", 0] }],
+				[".ch-number", { y: ["100%", 0] }, { at: "-0.8" }],
+				[".ch-description", { y: ["-100%", 0] }, { at: "-0.8" }],
+			],
+			{
+				defaultOptions: {
+					duration: 1,
+					easing: expoInOut,
+				},
+			}
+		);
+
+		scroll(
+			timeline([
+				[".ch-intro", { opacity: 0 }],
+				[".quote", { opacity: [null, 1, 0] }, { duration: 1 }],
+			]),
+			{
+				target: document.getElementById("intro")!,
+				offset: ScrollOffset.All,
+			}
+		);
+	});
+</script>
+
+<style>
+	@screen sm {
+		.grid-auto {
+			grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+		}
+	}
+
+	.grid-cell::before,
+	.grid-cell::after {
+		content: "";
+		z-index: 1;
+		position: absolute;
+		background: theme("colors.neutral.700");
+		inset-block-start: 0;
+		inset-inline-start: 0;
+		/* Avoid sub-pixel rendering */
+		will-change: transform;
+		transform: translateZ(0);
+	}
+
+	.grid-cell::before {
+		block-size: 100vh;
+		inline-size: 1px;
+	}
+
+	.grid-cell::after {
+		block-size: 1px;
+		inline-size: 100vw;
+	}
+</style>

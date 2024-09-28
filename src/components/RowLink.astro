@@ -1,0 +1,39 @@
+---
+export interface Props {
+	class?: string;
+	order?: number;
+	slug: string;
+	name: string;
+	description?: string;
+}
+
+const { class: className = "", order, slug, name, description } = Astro.props;
+---
+
+<a
+	class:list={[
+		"row group flex origin-left items-center border-r border-r-neutral-700/70 bg-black/50 p-6",
+		className,
+	]}
+	href={slug}
+>
+	<div class="item">
+		{
+			order && (
+				<span class="font-mono text-xs text-neutral-500">
+					&lbrace;0{order}&rbrace;
+				</span>
+			)
+		}
+
+		<div class="*:transition-colors *:duration-300">
+			<h2 class="text-lg font-semibold text-neutral-400 group-hover:text-white">
+				{name}
+			</h2>
+
+			<p class="text-sm text-neutral-500 group-hover:text-neutral-300">
+				{description}
+			</p>
+		</div>
+	</div>
+</a>

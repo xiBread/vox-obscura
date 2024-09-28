@@ -1,0 +1,102 @@
+---
+export interface Props {
+	slug: string;
+}
+
+const { slug } = Astro.props;
+---
+
+<audio id="voiceover" src={`/audio/${slug}.mp3`}></audio>
+
+<div class="flex w-full items-center py-4 font-mono text-sm text-neutral-500">
+	<button id="state" class="link group mr-4 size-8" type="button" data-state="paused">
+		<svg class="hidden group-data-[state=paused]:block" viewBox="0 0 24 24">
+			<path fill="currentColor" d="M8 19V5l11 7z"></path>
+		</svg>
+
+		<svg class="group-data-[state=paused]:hidden" viewBox="0 0 24 24">
+			<path fill="currentColor" d="M14 19V5h4v14zm-8 0V5h4v14z"></path>
+		</svg>
+	</button>
+
+	<span id="current-time">0:00</span>
+	<progress class="mx-3.5 h-1 w-full appearance-none hover:cursor-pointer" value="0">
+	</progress>
+	<span id="duration"></span>
+</div>
+
+<script>
+	document.addEventListener("astro:page-load", async () => {
+		const voiceover = document.getElementById("voiceover") as HTMLAudioElement | null;
+		if (!voiceover) return;
+
+		await new Promise<void>((resolve) => {
+			if (voiceover.readyState >= 1) {
+				resolve();
+			} else {
+				voiceover.addEventListener("loadedmetadata", () => resolve(), {
+					once: true,
+				});
+			}
+		});
+
+		const stateBtn = document.getElementById("state") as HTMLButtonElement;
+
+		const progress = document.querySelector("progress")!;
+		progress.max = voiceover.duration;
+
+		const currentTime = document.getElementById("current-time")!;
+		const duration = document.getElementById("duration")!;
+		duration.innerText = formatTime(voiceover.duration);
+
+		function formatTime(time: number): string {
+			const mins = Math.floor(time / 60);
+			const secs = Math.floor(time % 60);
+
+			return `${mins}:${secs.toString().padStart(2, "0")}`;
+		}
+
+		voiceover.addEventListener("timeupdate", () => {
+			progress.value = voiceover.currentTime;
+			currentTime.innerText = formatTime(voiceover.currentTime);
+		});
+
+		stateBtn.addEventListener("click", () => {
+			if (stateBtn.dataset.state === "paused") {
+				stateBtn.dataset.state = "playing";
+				voiceover.play();
+			} else {
+				stateBtn.dataset.state = "paused";
+				voiceover.pause();
+			}
+		});
+
+		progress.addEventListener("click", (event) => {
+			voiceover.currentTime =
+				((event.pageX -
+					progress.offsetLeft -
+					(progress.offsetParent as HTMLElement).offsetLeft) /
+					progress.offsetWidth) *
+				voiceover.duration;
+		});
+	});
+</script>
+
+<style>
+	progress {
+		background: hsl(0 0% 100% / 10%);
+	}
+
+	progress::-webkit-progress-bar {
+		background: transparent;
+	}
+
+	progress::-webkit-progress-value {
+		background: hsl(0 0% 100% / 70%);
+	}
+
+	/* need to explicity select FF because it falls back to green */
+	progress::-moz-progress-bar {
+		background: hsl(0 0% 100% / 70%);
+	}
+</style>

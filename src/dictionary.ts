@@ -21,6 +21,7 @@ interface ChapterQuote {
 
 export interface Word extends Metadata {
 	type: number;
+	audio?: boolean;
 	chapter: string;
 	definition: string;
 	etymology: string;
@@ -28,7 +29,7 @@ export interface Word extends Metadata {
 
 const words = Object.values(wordData).flat();
 
-export default {
+export const dictionary = {
 	chapters: Object.entries(wordData).reduce<Record<string, Chapter>>(
 		(all, [slug, words], i) => ({
 			...all,
@@ -37,7 +38,7 @@ export default {
 				words,
 			},
 		}),
-		{}
+		{},
 	),
 	words,
 	get: (slug: string): Word => {

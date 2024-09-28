@@ -1,29 +1,72 @@
 ---
-import dictionary from "../dictionary";
+import chapters from "../data/chapters.json";
 import Layout from "../layouts/Layout.astro";
+import RowLink from "../components/RowLink.astro";
 ---
 
 <Layout title="Home">
-	<div class="flex h-screen items-center justify-center px-24 sm:px-28">
-		<nav class="font-mono">
-			<ol class="list-[decimal-leading-zero] space-y-10 p-0 marker:text-neutral-600">
-				{
-					Object.values(dictionary.chapters).map((chapter) => (
-						<li class="xyz-in pl-0" xyz="fade up-1 stagger-2 duration-10">
-							<a
-								href={chapter.slug}
-								class="group flex flex-col font-normal text-neutral-400 no-underline hover:text-white"
-							>
-								<span class="mb-1.5">{chapter.name}</span>
+	<nav class="relative h-svh w-full md:w-1/2 xl:w-1/3">
+		<div class="grid size-full divide-y divide-neutral-700/70 backdrop-blur">
+			{
+				chapters.map((chapter, i) => (
+					<RowLink
+						order={i + 1}
+						slug={chapter.slug}
+						name={chapter.name}
+						description={chapter.description}
+					/>
+				))
+			}
 
-								<span class="text-sm text-neutral-500 group-hover:text-neutral-300">
-									<em>{chapter.description}</em>
-								</span>
-							</a>
-						</li>
-					))
-				}
-			</ol>
-		</nav>
-	</div>
+			<RowLink class="md:hidden" slug="about" name="About" />
+			<RowLink class="md:hidden" slug="index" name="Index" />
+		</div>
+	</nav>
+
+	<nav
+		class="nav-extra absolute bottom-4 right-6 hidden gap-x-2 overflow-hidden md:flex"
+	>
+		<div class="overflow-hidden">
+			<a class="font-mono" href="/about">about</a>
+		</div>
+
+		<div class="overflow-hidden">
+			<span class="text-neutral-500">&mdash;</span>
+		</div>
+
+		<div class="overflow-hidden">
+			<a class="font-mono" href="/all">index</a>
+		</div>
+	</nav>
 </Layout>
+
+<script>
+	import { timeline, stagger } from "motion";
+	import { expoInOut } from "../util";
+
+	document.addEventListener("astro:page-load", () => {
+		timeline([
+			[
+				".row",
+				{ scaleX: [0, 1] },
+				{ delay: stagger(0.1), duration: 1.5, easing: expoInOut },
+			],
+			[
+				".item",
+				{ opacity: [0, 1], y: [-24, 0] },
+				{ delay: stagger(0.15), duration: 1, at: 1.25 },
+			],
+			[
+				".nav-extra > *",
+				{ y: [24, 0] },
+				{ delay: stagger(0.1), duration: 0.75, at: "-1" },
+			],
+		]);
+	});
+</script>
+
+<style is:global>
+	.row {
+		transform: scaleX(0);
+	}
+</style>

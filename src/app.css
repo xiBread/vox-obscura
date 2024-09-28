@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	body {
+		font-family: "Inter Variable", sans-serif;
+	}
+
+	body::-webkit-scrollbar {
+		width: 8px;
+	}
+
+	body::-webkit-scrollbar-thumb {
+		background: theme("colors.neutral.700" / 70%);
+	}
+
+	a,
+	.link {
+		color: theme("colors.neutral.500");
+		transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+
+		&:hover,
+		&[aria-current="page"] {
+			color: #fff;
+		}
+	}
+
+	kbd {
+		display: inline-block;
+		position: relative;
+		top: -1px;
+		padding: 2px 6px;
+		background: theme("colors.neutral.700");
+		border: 1px solid theme("colors.neutral.800");
+		border-radius: 0.25rem;
+		box-shadow: 0 2px 0 1px theme("colors.neutral.800");
+	}
+
+	#p5_loading {
+		display: none;
+	}
+
+	.prose h1 {
+		font-weight: 700;
+	}
+}
