@@ -52,7 +52,7 @@ const types: Record<number, string> = {
 	</div>
 
 	<div class="mx-auto flex h-svh max-w-3xl flex-col items-center justify-center px-4">
-		<dl class="prose prose-neutral prose-invert max-w-[inherit] *:opacity-0">
+		<dl class="prose prose-neutral !prose-invert max-w-[inherit] *:opacity-0">
 			<dt class="part">
 				<dfn class="not-italic">
 					<h1 class="mb-0">{currentWord.name}</h1>
@@ -85,10 +85,10 @@ const types: Record<number, string> = {
 </Layout>
 
 <script>
-	import { stagger, timeline } from "motion";
+	import { animate, stagger } from "motion";
 
 	document.addEventListener("astro:page-load", () => {
-		timeline([
+		animate([
 			[".part", { opacity: 1 }, { delay: stagger(0.15), duration: 1.25 }],
 			[".tag", { opacity: 1 }, { duration: 1, at: "-0.75" }],
 		]);

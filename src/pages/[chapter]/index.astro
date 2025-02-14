@@ -47,8 +47,8 @@ const chapter = dictionary.chapters[Astro.params.chapter!];
 			<div class="flex flex-col gap-y-6 overflow-hidden">
 				{
 					chapter.quotes.map((quote) => (
-						<figure class="quote prose prose-neutral prose-invert font-serif opacity-0">
-							<blockquote class="not-italic text-neutral-300">
+						<figure class="quote prose prose-neutral !prose-invert font-serif opacity-0">
+							<blockquote class="text-neutral-300 not-italic">
 								<p
 									class:list={[
 										"text-justify before:hidden",
@@ -72,7 +72,7 @@ const chapter = dictionary.chapters[Astro.params.chapter!];
 		{
 			chapter.words.map((word) => (
 				<a
-					class="grid-cell relative aspect-square break-words p-4 transition-colors duration-1000 hover:bg-black/50 hover:duration-0"
+					class="grid-cell relative aspect-square p-4 break-words transition-colors duration-1000 hover:bg-black/50 hover:duration-0"
 					href={`/${word.chapter}/${word.slug}`}
 				>
 					<span class="text-3xl text-white">{word.name}</span>
@@ -83,39 +83,34 @@ const chapter = dictionary.chapters[Astro.params.chapter!];
 </Layout>
 
 <script>
-	import { scroll, timeline, ScrollOffset } from "motion";
+	import { scroll, animate } from "motion";
 	import { expoInOut } from "../../util";
 
 	document.addEventListener("astro:page-load", () => {
-		timeline(
+		animate(
 			[
-				[".ch-title", { y: ["100%", 0] }],
-				[".ch-number", { y: ["100%", 0] }, { at: "-0.8" }],
-				[".ch-description", { y: ["-100%", 0] }, { at: "-0.8" }],
+				[".ch-title", { y: ["100%", 0] }, { ease: expoInOut }],
+				[".ch-number", { y: ["100%", 0] }, { at: "-0.8", ease: expoInOut }],
+				[".ch-description", { y: ["-100%", 0] }, { at: "-0.8", ease: expoInOut }],
 			],
-			{
-				defaultOptions: {
-					duration: 1,
-					easing: expoInOut,
-				},
-			}
+			{ duration: 1 }
 		);
 
 		scroll(
-			timeline([
+			animate([
 				[".ch-intro", { opacity: 0 }],
 				[".quote", { opacity: [null, 1, 0] }, { duration: 1 }],
 			]),
 			{
 				target: document.getElementById("intro")!,
-				offset: ScrollOffset.All,
+				offset: ["start start", "end end"],
 			}
 		);
 	});
 </script>
 
 <style>
-	@screen sm {
+	@media (width >= 640px) {
 		.grid-auto {
 			grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 		}
@@ -126,7 +121,7 @@ const chapter = dictionary.chapters[Astro.params.chapter!];
 		content: "";
 		z-index: 1;
 		position: absolute;
-		background: theme("colors.neutral.700");
+		background: var(--color-neutral-700);
 		inset-block-start: 0;
 		inset-inline-start: 0;
 		/* Avoid sub-pixel rendering */
