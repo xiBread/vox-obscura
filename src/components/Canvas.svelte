@@ -22,7 +22,7 @@
 </script>
 
 <div
-	class="fixed inset-0 size-full overflow-clip transition-opacity duration-750 ease-in-out {mounted
+	class="fixed inset-0 size-full overflow-clip -z-20 transition-opacity duration-750 ease-in-out {mounted
 		? 'opacity-100'
 		: 'opacity-0'}"
 	bind:this={container}
