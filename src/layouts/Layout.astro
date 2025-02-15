@@ -1,11 +1,12 @@
 ---
-import "../app.css";
+/* eslint-disable perfectionist/sort-imports */
+
 import "@fontsource-variable/inter";
 import "@fontsource-variable/jetbrains-mono";
+import "../app.css";
 
-import { Image } from "astro:assets";
-import { ViewTransitions } from "astro:transitions";
-import grain from "../assets/grain.jpg";
+import { ClientRouter } from "astro:transitions";
+import Canvas from "../components/Canvas.svelte";
 
 export interface Props {
 	title: string;
@@ -22,25 +23,11 @@ export interface Props {
 
 		<title>{Astro.props.title} &bullet; Vox Obscura</title>
 
-		<script src="../sketch.ts"></script>
-
-		<ViewTransitions />
+		<ClientRouter />
 	</head>
 
 	<body class="bg-neutral-950 text-white">
-		<canvas
-			id="p5-canvas"
-			class="fixed inset-0 -z-20 opacity-0 transition-opacity duration-[1.5s] ease-in-out"
-			transition:persist
-		>
-		</canvas>
-
-		<Image
-			class="fixed inset-0 -z-10 size-full object-cover opacity-40 mix-blend-difference"
-			src={grain}
-			alt=""
-			loading="eager"
-		/>
+		<Canvas client:load transition:persist />
 
 		<main class="flex flex-col">
 			<slot />

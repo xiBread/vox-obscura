@@ -9,7 +9,12 @@ const { slug } = Astro.props;
 <audio id="voiceover" src={`/audio/${slug}.mp3`}></audio>
 
 <div class="flex w-full items-center py-4 font-mono text-sm text-neutral-500">
-	<button id="state" class="link group mr-4 size-8" type="button" data-state="paused">
+	<button
+		id="state"
+		class="link group mr-4 size-8 hover:cursor-pointer"
+		type="button"
+		data-state="paused"
+	>
 		<svg class="hidden group-data-[state=paused]:block" viewBox="0 0 24 24">
 			<path fill="currentColor" d="M8 19V5l11 7z"></path>
 		</svg>
@@ -20,8 +25,10 @@ const { slug } = Astro.props;
 	</button>
 
 	<span id="current-time">0:00</span>
+
 	<progress class="mx-3.5 h-1 w-full appearance-none hover:cursor-pointer" value="0">
 	</progress>
+
 	<span id="duration"></span>
 </div>
 
@@ -47,7 +54,7 @@ const { slug } = Astro.props;
 
 		const currentTime = document.getElementById("current-time")!;
 		const duration = document.getElementById("duration")!;
-		duration.innerText = formatTime(voiceover.duration);
+		duration.textContent = formatTime(voiceover.duration);
 
 		function formatTime(time: number): string {
 			const mins = Math.floor(time / 60);
@@ -58,7 +65,7 @@ const { slug } = Astro.props;
 
 		voiceover.addEventListener("timeupdate", () => {
 			progress.value = voiceover.currentTime;
-			currentTime.innerText = formatTime(voiceover.currentTime);
+			currentTime.textContent = formatTime(voiceover.currentTime);
 		});
 
 		stateBtn.addEventListener("click", () => {

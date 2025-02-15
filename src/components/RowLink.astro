@@ -12,7 +12,7 @@ const { class: className = "", order, slug, name, description } = Astro.props;
 
 <a
 	class:list={[
-		"row group flex origin-left items-center border-r border-r-neutral-700/70 bg-black/50 p-6",
+		"row group flex origin-left items-center border-r border-r-neutral-700/70 bg-black/50 p-6 backdrop-blur",
 		className,
 	]}
 	href={slug}
