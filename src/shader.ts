@@ -24,7 +24,7 @@ export function fragment(options?: { speed: number }) {
 	const speed = uniform(options?.speed ?? 1);
 
 	const color1 = color("#33689c"); // blue
-	const color2 = color("#29af9b"); // teal
+	const color2 = color("#1d917f"); // teal
 	const color3 = color("#8232aa"); // purple
 	const color4 = color("#999c36"); // yellow
 	const color5 = color("#d12975"); // pink
