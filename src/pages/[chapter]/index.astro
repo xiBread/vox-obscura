@@ -87,6 +87,9 @@ const chapter = dictionary.chapters[Astro.params.chapter!];
 	import { expoInOut } from "../../util";
 
 	document.addEventListener("astro:page-load", () => {
+		const intro = document.getElementById("intro")!;
+		if (!intro) return;
+
 		animate(
 			[
 				[".ch-title", { y: ["100%", 0] }, { ease: expoInOut }],
@@ -102,7 +105,7 @@ const chapter = dictionary.chapters[Astro.params.chapter!];
 				[".quote", { opacity: [null, 1, 0] }, { duration: 1 }],
 			]),
 			{
-				target: document.getElementById("intro")!,
+				target: intro,
 				offset: ["start start", "end end"],
 			}
 		);
