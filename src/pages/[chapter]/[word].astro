@@ -1,9 +1,9 @@
 ---
 import type { GetStaticPathsResult } from "astro";
+import Audio from "../../components/Audio.astro";
+import Navigation from "../../components/Navigation.astro";
 import { dictionary } from "../../dictionary";
 import Layout from "../../layouts/Layout.astro";
-import Navigation from "../../components/Navigation.astro";
-import Audio from "../../components/Audio.astro";
 
 export function getStaticPaths() {
 	return Object.values(dictionary.chapters).reduce<GetStaticPathsResult>(

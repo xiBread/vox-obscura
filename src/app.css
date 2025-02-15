@@ -2,7 +2,7 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-	--font-mono: 'JetBrains Mono Variable', monospace;
+	--font-mono: "JetBrains Mono Variable", monospace;
 }
 
 @layer base {
@@ -39,11 +39,9 @@
 		border-radius: 0.25rem;
 		box-shadow: 0 2px 0 1px var(--color-neutral-800);
 	}
+}
 
-	#p5_loading {
-		display: none;
-	}
-
+@layer components {
 	.prose h1 {
 		font-weight: 700;
 	}

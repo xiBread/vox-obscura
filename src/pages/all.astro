@@ -1,7 +1,8 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import type { Word } from "../dictionary";
 import Navigation from "../components/Navigation.astro";
-import { dictionary, type Word } from "../dictionary";
+import { dictionary } from "../dictionary";
+import Layout from "../layouts/Layout.astro";
 
 const groups = dictionary.words
 	.map((word) => ({
@@ -19,7 +20,7 @@ const groups = dictionary.words
 <Layout title="Index">
 	<Navigation current="index" />
 
-	<div class="mb-20 mt-32 flex items-center justify-center">
+	<div class="mt-32 mb-20 flex items-center justify-center">
 		<div class="columns-1 gap-x-40 space-y-12 md:columns-2 lg:columns-3">
 			{
 				Object.keys(groups)
@@ -27,7 +28,7 @@ const groups = dictionary.words
 					.map((group) => (
 						<div>
 							<ol class="relative inline-block space-y-2 font-mono">
-								<h2 class="pointer-events-none absolute -left-4 -top-4 text-5xl font-semibold text-neutral-500/30">
+								<h2 class="pointer-events-none absolute -top-4 -left-4 text-5xl font-semibold text-neutral-500/30">
 									{group.toUpperCase()}
 								</h2>
 

@@ -1,8 +1,8 @@
 ---
 import type { GetStaticPathsResult } from "astro";
-import Layout from "../../layouts/Layout.astro";
 import Navigation from "../../components/Navigation.astro";
 import { dictionary } from "../../dictionary";
+import Layout from "../../layouts/Layout.astro";
 import { romanNumerals } from "../../util";
 
 export function getStaticPaths(): GetStaticPathsResult {
@@ -83,7 +83,7 @@ const chapter = dictionary.chapters[Astro.params.chapter!];
 </Layout>
 
 <script>
-	import { scroll, animate } from "motion";
+	import { animate, scroll } from "motion";
 	import { expoInOut } from "../../util";
 
 	document.addEventListener("astro:page-load", () => {
