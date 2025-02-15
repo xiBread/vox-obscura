@@ -5,4 +5,7 @@ export default antfu({
 	stylistic: false,
 	svelte: true,
 	astro: true,
+	rules: {
+		"no-console": "off",
+	},
 }).prepend(prettier);

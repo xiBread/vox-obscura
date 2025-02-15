@@ -54,7 +54,7 @@ const { slug } = Astro.props;
 
 		const currentTime = document.getElementById("current-time")!;
 		const duration = document.getElementById("duration")!;
-		duration.innerText = formatTime(voiceover.duration);
+		duration.textContent = formatTime(voiceover.duration);
 
 		function formatTime(time: number): string {
 			const mins = Math.floor(time / 60);
@@ -65,7 +65,7 @@ const { slug } = Astro.props;
 
 		voiceover.addEventListener("timeupdate", () => {
 			progress.value = voiceover.currentTime;
-			currentTime.innerText = formatTime(voiceover.currentTime);
+			currentTime.textContent = formatTime(voiceover.currentTime);
 		});
 
 		stateBtn.addEventListener("click", () => {
