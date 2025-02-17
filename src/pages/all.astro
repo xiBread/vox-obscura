@@ -1,8 +1,8 @@
 ---
-import type { Word } from "../dictionary";
+import type { Word } from "../lib/dictionary";
 import Navigation from "../components/Navigation.astro";
-import { dictionary } from "../dictionary";
 import Layout from "../layouts/Layout.astro";
+import { dictionary } from "../lib/dictionary";
 
 const groups = dictionary.words
 	.map((word) => ({

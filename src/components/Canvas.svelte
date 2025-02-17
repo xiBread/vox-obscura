@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-	import { Renderer } from "../renderer";
-	import { fragment } from "../shader";
+	import { Renderer } from "../lib/renderer";
+	import { fragment } from "../lib/shader";
 
 	let mounted = $state(false);
 
