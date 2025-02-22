@@ -19,6 +19,7 @@ const chapter = dictionary.chapters[Astro.params.chapter!];
 	seo={{
 		description: chapter.description,
 		path: `/${chapter.slug}`,
+		image: `/api/og?chapter=${chapter.slug}`,
 	}}
 >
 	<Navigation current={chapter.slug} />
