@@ -24,15 +24,15 @@
 		/>
 
 		<hgroup class="flex flex-col px-16">
-			<span class="text-3xl" style="font-family: Playfair;">
+			<span class="text-4xl" style="font-family: Playfair;">
 				{romanNumerals[chapter.id]}
 			</span>
 
-			<h1 class="font-black my-1 text-8xl">
+			<h1 class="font-black my-3 text-8xl">
 				{chapter.name.toUpperCase()}
 			</h1>
 
-			<p class="text-2xl leading-0">{chapter.description}</p>
+			<p class="text-3xl leading-0">{chapter.description}</p>
 		</hgroup>
 	</div>
 {/if}
