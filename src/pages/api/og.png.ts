@@ -6,7 +6,6 @@ import satori from "satori";
 import { html } from "satori-html";
 import { render } from "svelte/server";
 import Inter400 from "../../assets/InterDisplay-400.woff";
-import Inter700 from "../../assets/InterDisplay-700.woff";
 import Inter900 from "../../assets/InterDisplay-900.woff";
 import Playfair600 from "../../assets/PlayfairDisplay-600.ttf";
 import OgTemplate from "../../components/OgTemplate.svelte";
@@ -21,11 +20,6 @@ const satoriOptions: SatoriOptions = {
 			name: "Inter",
 			data: Buffer.from(Inter400),
 			weight: 400,
-		},
-		{
-			name: "Inter",
-			data: Buffer.from(Inter700),
-			weight: 700,
 		},
 		{
 			name: "Inter",
