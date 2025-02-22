@@ -21,7 +21,7 @@ export interface Props {
 const baseUrl = import.meta.env.PUBLIC_BASE_URL;
 const { title, seo = {} as Props["seo"] & {} } = Astro.props;
 
-const seoImage = baseUrl + (seo.image ?? "og-default.jpg");
+const seoImage = baseUrl + (seo.image ?? "/og-default.jpg");
 ---
 
 <html lang="en" class="antialiased">
