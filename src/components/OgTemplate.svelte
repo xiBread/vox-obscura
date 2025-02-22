@@ -23,7 +23,7 @@
 			alt=""
 		/>
 
-		<hgroup class="flex flex-col">
+		<hgroup class="flex flex-col px-16">
 			<span class="text-3xl" style="font-family: Playfair;">
 				{romanNumerals[chapter.id]}
 			</span>
