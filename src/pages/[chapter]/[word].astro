@@ -43,7 +43,7 @@ const types: Record<number, string> = {
 	seo={{
 		description: currentWord.definition.slice(0, 160),
 		path: `/${chapter}/${word}`,
-		image: `/api/og?chapter=${chapter}&word=${word}`,
+		image: `/api/og.png?chapter=${chapter}&word=${word}`,
 	}}
 >
 	<Navigation current={chapter as string} />
