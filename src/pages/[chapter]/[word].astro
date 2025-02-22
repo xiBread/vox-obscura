@@ -38,7 +38,13 @@ const types: Record<number, string> = {
 };
 ---
 
-<Layout title={currentWord.name}>
+<Layout
+	title={currentWord.name}
+	seo={{
+		description: currentWord.definition.slice(0, 160),
+		path: `/${chapter}/${word}`,
+	}}
+>
 	<Navigation current={chapter as string} />
 
 	<div

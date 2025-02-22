@@ -14,7 +14,13 @@ export function getStaticPaths(): GetStaticPathsResult {
 const chapter = dictionary.chapters[Astro.params.chapter!];
 ---
 
-<Layout title={chapter.name}>
+<Layout
+	title={chapter.name}
+	seo={{
+		description: chapter.description,
+		path: `/${chapter.slug}`,
+	}}
+>
 	<Navigation current={chapter.slug} />
 
 	<div id="intro" class="h-[500svh] px-6">
