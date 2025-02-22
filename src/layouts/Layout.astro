@@ -11,7 +11,7 @@ import Canvas from "../components/Canvas.svelte";
 export interface Props {
 	title: string;
 	seo: {
-		description: string;
+		description?: string;
 		path: string;
 		image?: string;
 	};
@@ -33,19 +33,22 @@ const seoImage = baseUrl + (seo.image ?? "/og-default.jpg");
 		<link rel="icon" type="image/svg+xml" href="/logo.svg" />
 
 		<title>{title} &bullet; Vox Obscura</title>
-		<meta name="description" content={seo.description} />
 
 		<meta property="og:type" content="website" />
 		<meta property="og:site_name" content="Vox Obscura" />
 		<meta property="og:title" content={title} />
-		<meta property="og:description" content={seo.description} />
 		<meta property="og:image" content={seoImage} />
 		<meta property="og:url" content={baseUrl + seo.path} />
 
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content={seo.description} />
 		<meta name="twitter:image" content={seoImage} />
+
+		{seo.description && (
+			<meta name="description" content={seo.description} />
+			<meta property="og:description" content={seo.description} />
+			<meta name="twitter:description" content={seo.description} />
+		)}
 
 		<ClientRouter />
 	</head>
