@@ -41,7 +41,7 @@ const types: Record<number, string> = {
 <Layout
 	title={currentWord.name}
 	seo={{
-		description: currentWord.definition.slice(0, 160),
+		description: currentWord.definition,
 		path: `/${chapter}/${word}`,
 		image: `/api/og.png?chapter=${chapter}&word=${word}`,
 	}}
