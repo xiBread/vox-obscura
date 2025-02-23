@@ -13,17 +13,23 @@
 	const word = props.word ? dictionary.get(props.word) : null;
 </script>
 
+<img
+	class="absolute w-full h-full"
+	src={`${import.meta.env.PUBLIC_BASE_URL}/og-background.jpg`}
+	alt=""
+/>
+
 {#if word}
-	<!--  -->
+	<div class="flex flex-col justify-center h-full px-16 text-white">
+		<h1 class="font-black text-7xl mb-0">{word.name}</h1>
+
+		<p class="text-2xl text-neutral-400">
+			{word.definition.replace(/<[^>]+(>|$)/g, "")}
+		</p>
+	</div>
 {:else}
 	<div class="flex items-center justify-center w-full h-full text-white">
-		<img
-			class="absolute w-full h-full"
-			src={`${import.meta.env.PUBLIC_BASE_URL}/og-background.jpg`}
-			alt=""
-		/>
-
-		<hgroup class="flex flex-col px-16">
+		<div class="flex flex-col px-16">
 			<span class="text-4xl" style="font-family: Playfair;">
 				{romanNumerals[chapter.id]}
 			</span>
@@ -33,6 +39,6 @@
 			</h1>
 
 			<p class="text-3xl leading-0">{chapter.description}</p>
-		</hgroup>
+		</div>
 	</div>
 {/if}
