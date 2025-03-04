@@ -2,8 +2,8 @@
 import type { GetStaticPathsResult } from "astro";
 import Audio from "../../components/Audio.astro";
 import Navigation from "../../components/Navigation.astro";
-import { dictionary } from "../../dictionary";
 import Layout from "../../layouts/Layout.astro";
+import { dictionary } from "../../lib/dictionary";
 
 export function getStaticPaths() {
 	return Object.values(dictionary.chapters).reduce<GetStaticPathsResult>(
@@ -38,7 +38,14 @@ const types: Record<number, string> = {
 };
 ---
 
-<Layout title={currentWord.name}>
+<Layout
+	title={currentWord.name}
+	seo={{
+		description: currentWord.definition,
+		path: `/${chapter}/${word}`,
+		image: `/api/og.png?chapter=${chapter}&word=${word}`,
+	}}
+>
 	<Navigation current={chapter as string} />
 
 	<div

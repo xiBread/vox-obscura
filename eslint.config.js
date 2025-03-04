@@ -7,5 +7,6 @@ export default antfu({
 	astro: true,
 	rules: {
 		"no-console": "off",
+		"no-use-before-define": "off",
 	},
 }).prepend(prettier);

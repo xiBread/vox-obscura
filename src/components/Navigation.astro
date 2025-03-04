@@ -1,6 +1,6 @@
 ---
 import chapters from "../data/chapters.json";
-import { romanNumerals } from "../util";
+import { romanNumerals } from "../lib/util";
 
 export interface Props {
 	current: "about" | "index" | ({} & string);
@@ -9,7 +9,7 @@ export interface Props {
 const { current } = Astro.props;
 ---
 
-<nav class="fixed left-1/2 top-0 z-50 -translate-x-1/2 p-4">
+<nav class="fixed top-0 left-1/2 z-50 -translate-x-1/2 p-4">
 	<div class="mx-auto mb-1 flex max-w-max gap-x-2 font-serif text-neutral-500">
 		<a title="Home" href="/">home</a>
 		&mdash;

@@ -1,8 +1,8 @@
 ---
-import type { Word } from "../dictionary";
+import type { Word } from "../lib/dictionary";
 import Navigation from "../components/Navigation.astro";
-import { dictionary } from "../dictionary";
 import Layout from "../layouts/Layout.astro";
+import { dictionary } from "../lib/dictionary";
 
 const groups = dictionary.words
 	.map((word) => ({
@@ -17,7 +17,7 @@ const groups = dictionary.words
 	}, {});
 ---
 
-<Layout title="Index">
+<Layout title="Index" seo={{ path: "/all" }}>
 	<Navigation current="index" />
 
 	<div class="mt-32 mb-20 flex items-center justify-center">

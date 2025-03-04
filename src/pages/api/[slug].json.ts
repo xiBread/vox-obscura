@@ -1,5 +1,5 @@
 import type { APIRoute, GetStaticPaths } from "astro";
-import { dictionary } from "../../dictionary";
+import { dictionary } from "../../lib/dictionary";
 
 export const getStaticPaths: GetStaticPaths = () => {
 	return dictionary.words.map(({ slug }) => ({ params: { slug } }));

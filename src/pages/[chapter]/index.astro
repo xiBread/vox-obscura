@@ -1,9 +1,9 @@
 ---
 import type { GetStaticPathsResult } from "astro";
 import Navigation from "../../components/Navigation.astro";
-import { dictionary } from "../../dictionary";
 import Layout from "../../layouts/Layout.astro";
-import { romanNumerals } from "../../util";
+import { dictionary } from "../../lib/dictionary";
+import { romanNumerals } from "../../lib/util";
 
 export function getStaticPaths(): GetStaticPathsResult {
 	return Object.keys(dictionary.chapters).map((slug) => ({
@@ -14,7 +14,14 @@ export function getStaticPaths(): GetStaticPathsResult {
 const chapter = dictionary.chapters[Astro.params.chapter!];
 ---
 
-<Layout title={chapter.name}>
+<Layout
+	title={chapter.name}
+	seo={{
+		description: chapter.description,
+		path: `/${chapter.slug}`,
+		image: `/api/og.png?chapter=${chapter.slug}`,
+	}}
+>
 	<Navigation current={chapter.slug} />
 
 	<div id="intro" class="h-[500svh] px-6">
@@ -84,7 +91,7 @@ const chapter = dictionary.chapters[Astro.params.chapter!];
 
 <script>
 	import { animate, scroll } from "motion";
-	import { expoInOut } from "../../util";
+	import { expoInOut } from "../../lib/util";
 
 	document.addEventListener("astro:page-load", () => {
 		const intro = document.getElementById("intro")!;
