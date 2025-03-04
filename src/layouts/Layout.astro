@@ -10,7 +10,18 @@ import Canvas from "../components/Canvas.svelte";
 
 export interface Props {
 	title: string;
+	seo: {
+		description?: string;
+		path: string;
+		image?: string;
+	};
 }
+
+// Can't destructure import.meta.env
+const baseUrl = import.meta.env.PUBLIC_BASE_URL;
+const { title, seo = {} as Props["seo"] & {} } = Astro.props;
+
+const seoImage = baseUrl + (seo.image ?? "/og-default.jpg");
 ---
 
 <html lang="en" class="antialiased">
@@ -19,9 +30,25 @@ export interface Props {
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 
-		<link rel="icon" type="image/svg+xml" href="/logo.svg" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
 
-		<title>{Astro.props.title} &bullet; Vox Obscura</title>
+		<title>{title} &bullet; Vox Obscura</title>
+
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Vox Obscura" />
+		<meta property="og:title" content={title} />
+		<meta property="og:image" content={seoImage} />
+		<meta property="og:url" content={baseUrl + seo.path} />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:image" content={seoImage} />
+
+		{seo.description && (
+			<meta name="description" content={seo.description} />
+			<meta property="og:description" content={seo.description} />
+			<meta name="twitter:description" content={seo.description} />
+		)}
 
 		<ClientRouter />
 	</head>

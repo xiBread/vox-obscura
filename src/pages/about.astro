@@ -4,7 +4,14 @@ import { Content } from "../data/about.md";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="About">
+<Layout
+	title="About"
+	seo={{
+		description:
+			'Vox Obscura (Latin for "dark voice") is a web version of The Dictionary of Obscure Sorrows by John Koenig.',
+		path: "/about",
+	}}
+>
 	<Navigation current="about" />
 
 	<div class="mt-32 mb-20 flex items-center justify-center px-6">
